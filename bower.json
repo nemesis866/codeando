@@ -1,0 +1,27 @@
+{
+  "name": "plataforma-codeando",
+  "description": "Plataforma de cursos web",
+  "main": "index.js",
+  "authors": [
+    "Paulo Andrade"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "plataforma",
+    "cursos"
+  ],
+  "homepage": "https://github.com/nemesis866/codeando",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./app/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "bootstrap": "~3.3.5"
+  }
+}
