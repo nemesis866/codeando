@@ -23,7 +23,7 @@ var gulp = require('gulp'),
 var paths = {
 	css: './app/styles/**/*.css',
 	cssMin: './app/css/**/*.css',
-	html: './app/*.html',
+	html: './app/**/*.html',
 	scripts: './app/scripts/**/*.js',
 	scriptsMin: './app/js/**/*.js'
 };
@@ -38,7 +38,9 @@ gulp.task('html', function (){
 gulp.task('inject', function (){
 	var sources = gulp.src([paths.scriptsMin, paths.cssMin], {read: false});
 
-	gulp.src('index.html', {cwd: './app'})
+	gulp.src('index.html', {
+		cwd: './app'
+	})
 	.pipe(inject(sources, {
 		read: false,
 		ignorePath: '/app'
@@ -49,7 +51,9 @@ gulp.task('inject', function (){
 // Comprime los archivos css
 gulp.task('minify-css', function() {
   return gulp.src(paths.css)
-    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(minifyCss({
+    	compatibility: 'ie8'
+    }))
     .pipe(gulp.dest('./app/css'));
 });
 
@@ -74,11 +78,9 @@ gulp.task('server', function (){
 
 // Corre las tareas cada vez que hay cambios
 gulp.task('watch', function() {
-	gulp.watch(paths.css, ['minify-css']);
-	gulp.watch(paths.html, ['html']);
-	gulp.watch(paths.scripts, ['scripts']);
-	gulp.watch([paths.scripts], ['inject']);
-	gulp.watch([paths.css], ['inject']);
+	gulp.watch([paths.html], ['html']);
+	gulp.watch([paths.scripts], ['scripts', 'inject']);
+	gulp.watch([paths.css], ['inject', 'minify-css']);
 	gulp.watch(['./bower.json'], ['wiredep']);
 });
 

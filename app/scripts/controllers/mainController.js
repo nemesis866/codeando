@@ -8,10 +8,12 @@ Web: http://www.pauloandrade1.com
 ************************************************/
 
 (function (){
-	function mainController($scope)
+	function mainController()
 	{
 		var vm = this;
 	}
 
-	angular.module('app').controller('mainController', mainController);
-})()
+	angular
+		.module('app')
+			.controller('mainController', mainController);
+})();

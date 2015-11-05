@@ -1,0 +1,1 @@
+!function(){function n(){}angular.module("app").controller("mainController",n)}();

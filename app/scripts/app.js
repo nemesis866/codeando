@@ -7,4 +7,5 @@ Email: source.compu@gmail.com
 Web: http://www.pauloandrade1.com
 ************************************************/
 
-angular.module('app', []);
+angular
+	.module('app', []);
