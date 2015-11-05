@@ -1,0 +1,1 @@
+!function(){var e,t=document.getElementsByTagName("script")[0],s=function(s,o){document.getElementById(o)||(e=document.createElement("script"),e.async=!0,e.src=s,t.parentNode.insertBefore(e,t))};s("//apis.google.com/js/plusone.js","plus"),s("//platform.twitter.com/widgets.js","twitter-wjs"),s("//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js","adsense")}();

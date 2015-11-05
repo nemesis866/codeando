@@ -1,0 +1,35 @@
+{
+  "name": "plataforma-codeando",
+  "version": "1.0.0",
+  "description": "Plataforma de cursos web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paulo Andrade",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-uglify": "^1.4.0",
+    "gulp-util": "^3.0.6"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-uglify": "^1.4.0",
+    "gulp-util": "^3.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/paulo866/codeando.git"
+  },
+  "keywords": [
+    "plataforma",
+    "cursos"
+  ],
+  "bugs": {
+    "url": "https://github.com/paulo866/codeando/issues"
+  },
+  "homepage": "https://github.com/paulo866/codeando#readme"
+}

@@ -1,0 +1,529 @@
+/*********************************************************
+Configuracion general
+*********************************************************/
+@font-face{
+	font-family: 'icomoon';
+	src: url('/fonts/icomoon.eot');
+	src: url('/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+	url('/fonts/icomoon.svg#icomoon') format('svg'),
+	url('/fonts/icomoon.woff') format('woff'),
+	url('/fonts/icomoon.ttf') format('truetype');
+	font-weight: normal; font-style: normal;
+}
+@font-face {
+    font-family: 'Ralewey';
+    src: url('/fonts/Raleway-Regular.ttf') format("truetype");
+}
+*
+{
+	margin: 0;
+	padding: 0;
+}
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a
+{
+	color: #DDA02C;
+	text-decoration: none;
+	transition: all 0.25s ease;
+}
+a:hover
+{
+	color: #222;
+	text-decoration: none;
+}
+body
+{
+	color: #414141;
+	font-family: Ralewey, arial, helvetica;
+	font-size: 18px;
+	line-height: 1.4;
+}
+html
+{
+	height: 100%;
+	box-sizing: border-box;
+}
+/*CLASES GENERICAS*/
+.button
+{
+	border: 1px solid #000;
+	border-left: 5px solid #000;
+	padding: 10px 10px;
+	font-size: 18px;
+	border-radius: 3px;
+	transition: all 0.25s ease;
+}
+.button:hover
+{
+	cursor: pointer;
+	opacity: 0.7;
+}
+.center
+{
+	text-align: center;
+}
+.large
+{
+	width: 300px;
+}
+.left
+{
+	text-align: left;
+}
+/*Colores*/
+.blue-fb
+{
+	color: #fff;
+	background-color: #3F5C9A;
+	font-weight: bold;
+}
+.green-platform
+{
+	color: #fff;
+	background-color: #009957;
+	font-weight: bold;
+}
+
+/*********************************************************
+Configuracion footer
+*********************************************************/
+footer
+{
+	background-color: #212121;
+	border-top: 2px solid #999;
+	color: #ccc;
+	font-size: 0.9em;
+	padding: 1.5em 0;
+	text-align: center;
+	max-width: 100%;
+}
+footer a
+{
+	color: #ccc;
+	text-decoration: none;
+	transition: all 0.5s ease-in-out;
+}
+footer a:hover
+{
+	color: #999;
+	text-decoration: underline;
+}
+
+
+/*********************************************************
+Configuracion Tooltip
+*********************************************************/
+
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: 160px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #000;
+  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/*********************************************************
+Configuracion iconos
+*********************************************************/
+.icon:hover
+{
+	cursor: pointer;
+	opacity: 0.7;
+}
+.icon-alerta:before
+{
+	color: #fff;
+	content: '\e649';
+	font-family: 'icomoon';
+	font-size: 20px;
+	padding-right: 20px;
+}
+.icon-foro:before
+{
+	color: #000;
+	content: '\e612';
+	font-family: 'icomoon';
+	font-size: 24px;
+}
+.icon-doc:before
+{
+	color: #000;
+	content: '\e604';
+	font-family: 'icomoon';
+	font-size: 24px;
+}
+.icon-facebook:before
+{
+	color: #fff;
+	content: '\e624';
+	font-family: 'icomoon';
+	font-size: 16px;
+	padding-right: 10px;
+	border-right: 1px solid #fff;
+	margin-right: 10px;
+}
+.icon-menu:before
+{
+	color: #fff;
+	content: '\e614';
+	font-family: 'icomoon';
+	font-size: 20px;
+	padding-right: 10px;
+}
+.icon-menu-inicio:before
+{
+	color: #55ACEE;
+	content: '\e614';
+	font-family: 'icomoon';
+	font-size: 36px;
+	padding-right: 10px;
+}
+.icon-notas:before
+{
+	color: #000;
+	content: '\e60d';
+	font-family: 'icomoon';
+	font-size: 24px;
+}
+.icon-platform:before
+{
+	color: #fff;
+	content: '\e609';
+	font-family: 'icomoon';
+	font-size: 16px;
+	padding-right: 10px;
+	border-right: 1px solid #fff;
+	margin-right: 10px;
+}
+.icon-user:before
+{
+	color: #000;
+	content: '\e613';
+	font-family: 'icomoon';
+	font-size: 24px;
+}
+.icon-find:before
+{
+	color: #273B47;
+	content: '\e613';
+	font-family: 'icomoon';
+	font-size: 16px;
+	padding-right: 10px;
+}
+.icon-left:before
+{
+	color: #000;
+	content: '\e64b';
+	font-family: 'icomoon';
+	font-size: 24px;
+	padding-left: 10px;
+}
+.icon-left_back:before
+{
+	color: #fff;
+	content: '\e64b';
+	font-family: 'icomoon';
+	font-size: 24px;
+	padding-right: 20px;
+}
+.icon-bold:before
+{
+	font-family: 'icomoon';
+	font-size: 16px;
+	color: #000;
+	content: '\e61d';
+}
+.icon-italic:before
+{
+	font-family: 'icomoon';
+	font-size: 16px;
+	color: #000;
+	content: '\e61f';
+}
+.icon-underline:before
+{
+	font-family: 'icomoon';
+	font-size: 16px;
+	color: #000;
+	content: '\e61e';
+}
+.icon-strike:before
+{
+	font-family: 'icomoon';
+	font-size: 16px;
+	color: #000;
+	content: '\e620';
+}
+.icon-code:before
+{
+	font-family: 'icomoon';
+	font-size: 16px;
+	color: #000;
+	content: '\e621';
+	padding-right: 10px;
+}
+.icon-right:before
+{
+	color: #000;
+	content: '\e64a';
+	font-family: 'icomoon';
+	font-size: 24px;
+	padding-left: 10px;
+}
+.icon-right-dis:before
+{
+	color: #fff;
+	content: '\e64a';
+	font-family: 'icomoon';
+	font-size: 24px;
+	padding-right: 20px;
+}
+.icon-voto-up:before
+{
+	color: #08b60b;
+	content: '\e639';
+	font-family: 'icomoon';
+	font-size: 20px;
+	padding-right: 15px;
+}
+.icon-voto-down:before
+{
+	color: #C52A1A;
+	content: '\e638';
+	font-family: 'icomoon';
+	font-size: 20px;
+	padding-left: 15px;
+}
+.icon-check:before
+{
+	color: #01C657;
+	content: '\e64c';
+	font-family: 'icomoon';
+	font-size: 20px;
+	padding-left: 10px;
+}
+.icon-edit:before
+{
+	color: #000;
+	content: '\e602';
+	font-family: 'icomoon';
+	font-size: 16px;
+	padding-right: 20px;
+}
+.icon-delete:before
+{
+	color: #000;
+	content: '\e63f';
+	font-family: 'icomoon';
+	font-size: 16px;
+	padding-right: 10px;
+}
+.icon-reload:before
+{
+	color: #fff;
+	content: '\e61c';
+	font-family: 'icomoon';
+	font-size: 16px;
+	padding-right: 10px;
+}
+.icon-link:before
+{
+	color: #fff;
+	content: '\e64d';
+	font-family: 'icomoon';
+	font-size: 16px;
+	padding-right: 10px;
+}
+.icon-link-icon:before
+{
+	color: blue;
+	content: '\e64d';
+	font-family: 'icomoon';
+	font-size: 16px;
+}
+.icon-archive-icon:before
+{
+	color: blue;
+	content: '\e604';
+	font-family: 'icomoon';
+	font-size: 16px;
+}
+.icon-github:before
+{
+	color: #fff;
+	content: '\e627';
+	font-family: 'icomoon';
+	font-size: 24px;
+	margin-right: 10px;
+}
+.icon-twitter:before
+{
+	color: #fff;
+	content: '\e625';
+	font-family: 'icomoon';
+	font-size: 20px;
+	margin-right: 10px;
+}
+.icon-directorio:before
+{
+	color: #DBBF74;
+	content: '\e60b';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-html:before
+{
+	color: #F16529;
+	content: '\e630';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-css:before
+{
+	color: #2CA5DE;
+	content: '\e631';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-js:before
+{
+	color: #D6BA33;
+	content: '\e62e';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-php:before
+{
+	color: #5A68A5;
+	content: '\e62e';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-json:before
+{
+	color: #A3BF07;
+	content: '\e62f';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-c:before
+{
+	color: #F11717;
+	content: '\e62e';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-cpp:before
+{
+	color: #F11717;
+	content: '\e62e';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-discusion:before
+{
+	color: #Fcfcfc;
+	content: '\e612';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-usuario:before
+{
+	color: #Fcfcfc;
+	content: '\e63b';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-video:before
+{
+	color: #Fcfcfc;
+	content: '\e603';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-paypal:before
+{
+	color: #33669B;
+	content: '\e62d';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-home:before
+{
+	color: #33669B;
+	content: '\e600';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
