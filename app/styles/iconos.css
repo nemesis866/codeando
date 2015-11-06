@@ -1,0 +1,355 @@
+/************************************************
+Hoja de estilos con los iconos de la aplicacion
+
+Proyecto: Codeando.org
+Author: Paulo Andrade
+Email: source.compu@gmail.com
+Web: http://www.pauloandrade1.com
+************************************************/
+
+/*********************************************************
+Configuracion iconos
+*********************************************************/
+.icon:hover
+{
+	cursor: pointer;
+	opacity: 0.7;
+}
+.icon-alerta:before
+{
+	color: #fff;
+	content: '\e649';
+	font-family: 'icomoon';
+	font-size: 20px;
+	padding-right: 20px;
+}
+.icon-foro:before
+{
+	color: #000;
+	content: '\e612';
+	font-family: 'icomoon';
+	font-size: 24px;
+}
+.icon-doc:before
+{
+	color: #000;
+	content: '\e604';
+	font-family: 'icomoon';
+	font-size: 24px;
+}
+.icon-facebook:before
+{
+	color: #fff;
+	content: '\e624';
+	font-family: 'icomoon';
+	font-size: 16px;
+	padding-right: 10px;
+	border-right: 1px solid #fff;
+	margin-right: 10px;
+}
+.icon-menu:before
+{
+	color: #fff;
+	content: '\e614';
+	font-family: 'icomoon';
+	font-size: 20px;
+	padding-right: 10px;
+}
+.icon-menu-inicio:before
+{
+	color: #55ACEE;
+	content: '\e614';
+	font-family: 'icomoon';
+	font-size: 36px;
+	padding-right: 10px;
+}
+.icon-notas:before
+{
+	color: #000;
+	content: '\e60d';
+	font-family: 'icomoon';
+	font-size: 24px;
+}
+.icon-platform:before
+{
+	color: #fff;
+	content: '\e609';
+	font-family: 'icomoon';
+	font-size: 16px;
+	padding-right: 10px;
+	border-right: 1px solid #fff;
+	margin-right: 10px;
+}
+.icon-user:before
+{
+	color: #000;
+	content: '\e613';
+	font-family: 'icomoon';
+	font-size: 24px;
+}
+.icon-find:before
+{
+	color: #273B47;
+	content: '\e613';
+	font-family: 'icomoon';
+	font-size: 16px;
+	padding-right: 10px;
+}
+.icon-left:before
+{
+	color: #000;
+	content: '\e64b';
+	font-family: 'icomoon';
+	font-size: 24px;
+	padding-left: 10px;
+}
+.icon-left_back:before
+{
+	color: #fff;
+	content: '\e64b';
+	font-family: 'icomoon';
+	font-size: 24px;
+	padding-right: 20px;
+}
+.icon-bold:before
+{
+	font-family: 'icomoon';
+	font-size: 16px;
+	color: #000;
+	content: '\e61d';
+}
+.icon-italic:before
+{
+	font-family: 'icomoon';
+	font-size: 16px;
+	color: #000;
+	content: '\e61f';
+}
+.icon-underline:before
+{
+	font-family: 'icomoon';
+	font-size: 16px;
+	color: #000;
+	content: '\e61e';
+}
+.icon-strike:before
+{
+	font-family: 'icomoon';
+	font-size: 16px;
+	color: #000;
+	content: '\e620';
+}
+.icon-code:before
+{
+	font-family: 'icomoon';
+	font-size: 16px;
+	color: #000;
+	content: '\e621';
+	padding-right: 10px;
+}
+.icon-right:before
+{
+	color: #000;
+	content: '\e64a';
+	font-family: 'icomoon';
+	font-size: 24px;
+	padding-left: 10px;
+}
+.icon-right-dis:before
+{
+	color: #fff;
+	content: '\e64a';
+	font-family: 'icomoon';
+	font-size: 24px;
+	padding-right: 20px;
+}
+.icon-voto-up:before
+{
+	color: #08b60b;
+	content: '\e639';
+	font-family: 'icomoon';
+	font-size: 20px;
+	padding-right: 15px;
+}
+.icon-voto-down:before
+{
+	color: #C52A1A;
+	content: '\e638';
+	font-family: 'icomoon';
+	font-size: 20px;
+	padding-left: 15px;
+}
+.icon-check:before
+{
+	color: #01C657;
+	content: '\e64c';
+	font-family: 'icomoon';
+	font-size: 20px;
+	padding-left: 10px;
+}
+.icon-edit:before
+{
+	color: #000;
+	content: '\e602';
+	font-family: 'icomoon';
+	font-size: 16px;
+	padding-right: 20px;
+}
+.icon-delete:before
+{
+	color: #000;
+	content: '\e63f';
+	font-family: 'icomoon';
+	font-size: 16px;
+	padding-right: 10px;
+}
+.icon-reload:before
+{
+	color: #fff;
+	content: '\e61c';
+	font-family: 'icomoon';
+	font-size: 16px;
+	padding-right: 10px;
+}
+.icon-link:before
+{
+	color: #fff;
+	content: '\e64d';
+	font-family: 'icomoon';
+	font-size: 16px;
+	padding-right: 10px;
+}
+.icon-link-icon:before
+{
+	color: blue;
+	content: '\e64d';
+	font-family: 'icomoon';
+	font-size: 16px;
+}
+.icon-archive-icon:before
+{
+	color: blue;
+	content: '\e604';
+	font-family: 'icomoon';
+	font-size: 16px;
+}
+.icon-github:before
+{
+	color: #fff;
+	content: '\e627';
+	font-family: 'icomoon';
+	font-size: 24px;
+	margin-right: 10px;
+}
+.icon-twitter:before
+{
+	color: #fff;
+	content: '\e625';
+	font-family: 'icomoon';
+	font-size: 20px;
+	margin-right: 10px;
+}
+.icon-directorio:before
+{
+	color: #DBBF74;
+	content: '\e60b';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-html:before
+{
+	color: #F16529;
+	content: '\e630';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-css:before
+{
+	color: #2CA5DE;
+	content: '\e631';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-js:before
+{
+	color: #D6BA33;
+	content: '\e62e';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-php:before
+{
+	color: #5A68A5;
+	content: '\e62e';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-json:before
+{
+	color: #A3BF07;
+	content: '\e62f';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-c:before
+{
+	color: #F11717;
+	content: '\e62e';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-cpp:before
+{
+	color: #F11717;
+	content: '\e62e';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-discusion:before
+{
+	color: #Fcfcfc;
+	content: '\e612';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-usuario:before
+{
+	color: #Fcfcfc;
+	content: '\e63b';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-video:before
+{
+	color: #Fcfcfc;
+	content: '\e603';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-paypal:before
+{
+	color: #33669B;
+	content: '\e62d';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-home:before
+{
+	color: #33669B;
+	content: '\e600';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}

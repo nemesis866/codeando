@@ -3,18 +3,108 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<!-- bower:css -->
 	<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" />
 	<!-- endbower -->
 	<!-- inject:css -->
+	<link rel="stylesheet" href="/css/iconos.css">
 	<link rel="stylesheet" href="/css/main.css">
 	<!-- endinject -->
 </head>
 <body>
+	<div id="nav">
+		<div id="nav_wrapper">
+			<div id="nav_1">
+				<div id="buscador" class="icon-find">
+					<input type="text" id="q" placeholder="Buscar en codeando.org">
+				</div>
+			</div>
+			<div id="nav_2">
+				<nav>
+					<ul>
+						<li id="nav1"><a href="#/">Inicio</a></li>
+						<li id="nav2"><a href="#/cursos/">Cursos</a></li>
+						<li><a href="http://blog.codeando.org">Blog</a></li>
+						<li id="nav4"><a href="#/contacto/">Contactanos</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<span id="display-menu" class="icon-menu-inicio"></span>
 	<header>
-		<nav></nav>
-		<h1>Codeando.org</h1>
+		<div id="header">
+			<div id="head_1">
+				<a href="/"><img src="/img/logo_opt.png"></a>
+					<h1>Codeando.org</h1>
+					<h2>Cursos de programación gratuitos</h2>
+			</div>
+			<div id="head_2">
+				<a href="http://programacionazteca.mx"><img src="/img/logo_azteca.png"></a>
+				<div id="header_text">
+					<p>Un proyecto de<br>
+					<a href="http://programacionazteca.mx">PROGRAMACION AZTECA</a></p>
+				</div>
+			</div>
+		</div>
 	</header>
+
+	<section id="wrapper">
+	</section>
+		<footer ng-controller="footerController as vm">
+			<div id="footer_1">
+				<h3>Secciones:</h3>
+				<ul>
+					<li ng-repeat="menu in vm.menu">
+						<a href="{{ menu.href }}">{{ menu.name }}</a>
+					</li>
+				</ul>
+				<h3>Cursos disponibles:</h3>
+				<ul>
+					<li ng-repeat="course in vm.courses">
+						<a href="/{{ course.categoria }}/{{ course.url }}/{{ course.id_curso }}/">{{ course.titulo }}</a>
+					</li>
+				</ul>
+			</div>
+			<div id="footer_2">
+				<h3>Sitios de interes:</h3>
+				<ul>
+					<li ng-repeat="interes in vm.interes">
+						<a href="{{ interes.href }}">{{ interes.name }}</a>
+					</li>
+				</ul>
+			</div>
+			<div id="footer_3">
+				<a href="http://programacionazteca.mx" rel="nofollow"><img src="/img/logo_azteca.png"></a>
+				<div id="footer_3_text">
+					<p>Un proyecto de<br>
+					<a href="http://programacionazteca.mx" rel="nofollow">PROGRAMACION AZTECA</a></p>
+				</div>
+			</div>
+			<div>
+				<p>{{ vm.siteName }} - {{ vm.date }}</p>
+				<p>Un proyecto de <a href="http://programacionazteca.mx" rel="nofollow">Programación Azteca</a></p>
+			</div>
+			<div id="img_count"></div>
+		</footer>
+		<div id="login_box">
+			<div id="login_close" title="Cerrar">X</div>
+			<?php require_once 'include/html_login.php'; ?>
+		</div>
+		<div id="menu-contenido">
+			<ul>
+				<li ng-repeat="menu in vm.menu">
+					<a href="{{ menu.href }}">{{ menu.name }}</a>
+				</li>
+				<div class="center">
+					<li><a id="menu_cerrar">Cerrar</a></li>
+				</div>
+			</ul>
+		</div>
+	</footer>
+	<div class="error"></div>
+	<div class="success"></div>
 
 	<!-- bower:js -->
 	<script src="vendor/jquery/dist/jquery.js"></script>
@@ -23,6 +113,7 @@
 	<!-- endbower -->
 	<!-- inject:js -->
 	<script src="/js/app.js"></script>
+	<script src="/js/controllers/footerController.js"></script>
 	<script src="/js/controllers/mainController.js"></script>
 	<!-- endinject -->
 </body>
