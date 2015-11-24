@@ -18,6 +18,16 @@ Web: http://www.pauloandrade1.com
 				controllerAs: 'vm',
 				templateUrl: 'views/home.html'
 			})
+			.when('/cursos/', {
+				controller: 'coursesController',
+				controllerAs: 'vm',
+				templateUrl: 'views/courses.html'
+			})
+			.when('/contacto/', {
+				controller: 'contactController',
+				controllerAs: 'vm',
+				templateUrl: 'views/contact.html'
+			})
 			.otherwise({
 				redirectTo: '/'
 		    });
