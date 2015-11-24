@@ -8,7 +8,9 @@ Web: http://www.pauloandrade1.com
 ************************************************/
 
 (function (){
-	function footerController($http)
+	'use strict';
+
+	function FooterController($http)
 	{
 		var vm = this;
 		var fecha = new Date();
@@ -41,5 +43,5 @@ Web: http://www.pauloandrade1.com
 
 	angular
 		.module('app')
-			.controller('footerController', ['$http', footerController]);
+			.controller('footerController', ['$http', FooterController]);
 })();

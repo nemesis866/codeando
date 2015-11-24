@@ -5,20 +5,57 @@
 	<title>Codeando.org</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<!-- bower:css -->
-	<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" />
 	<!-- endbower -->
 	<!-- inject:css -->
 	<link rel="stylesheet" href="/css/iconos.css">
 	<link rel="stylesheet" href="/css/main.css">
 	<!-- endinject -->
+
+	<base href="/">
 </head>
 <body>
-	<h1>Hello codeando</h1>
+	<header ng-controller="headerController as vm">
+		<div id="header">
+			<h1><a href="/">Codeando</a></h1>
+		</div>
+		<nav>
+			<ul>
+				<li ng-repeat="vm in vm.nav">
+					<a href="{{ vm.href }}">{{ vm.title }}</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<div ng-view></div>
+
+	<footer ng-controller="footerController as vm">
+		<div class="footer-box">
+			<h3>Secciones</h3>
+			<p ng-repeat="vm in vm.menu">
+				<a href="{{ vm.href }}">{{ vm.name }}</a>
+			</p>
+		</div>
+		<div class="footer-box">
+			<h3>Te puede interesar</h3>
+			<p ng-repeat="vm in vm.interes">
+				<a href="{{ vm.href }}">{{ vm.name }}</a>
+			</p>
+		</div>
+		<div class="footer-box">
+			<h3>Cursos disponibles</h3>
+			<p ng-repeat="vm in vm.courses">
+				<a href="http://codeando.org/curso/{{ vm.url }}/{{ vm.id_curso }}/">{{ vm.titulo }}</a>
+			</p>
+		</div>
+		<div>
+			<p>Codeando {{ vm.date }}</p>
+			<p>Un proyecto de Programación Azteca</p>
+		</div>
+	</footer>
 
 	<!-- bower:js -->
-	<script src="vendor/jquery/dist/jquery.js"></script>
 	<script src="vendor/angular/angular.js"></script>
-	<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="vendor/angular-route/angular-route.js"></script>
 	<!-- endbower -->
 	<!-- inject:js -->

@@ -16,7 +16,7 @@ Web: http://www.pauloandrade1.com
 			.when('/', {
 				controller: 'mainController',
 				controllerAs: 'vm',
-				templateUrl: 'views/init.html'
+				templateUrl: 'views/home.html'
 			})
 			.otherwise({
 				redirectTo: '/'
