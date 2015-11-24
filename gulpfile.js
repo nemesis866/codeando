@@ -12,6 +12,7 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	gutil = require('gulp-util'),
 	minifyCss = require('gulp-minify-css'),
+	concat = require('gulp-concat'),
 	// Servidor local
 	connect = require('gulp-connect'),
 	historyApiFallback = require('connect-history-api-fallback'),
@@ -35,7 +36,7 @@ gulp.task('html', function (){
 });
 
 // Injectamos los archivos js y css propios
-gulp.task('inject', function (){
+gulp.task('inject', ['wiredep'], function (){
 	var sources = gulp.src([paths.scriptsMin, paths.cssMin], {read: false});
 
 	gulp.src('index.html', {
@@ -44,6 +45,21 @@ gulp.task('inject', function (){
 	.pipe(inject(sources, {
 		read: false,
 		ignorePath: '/app'
+	}))
+	.pipe(gulp.dest('./app'));
+});
+
+// Injectamos dependencias instaladas con bower
+gulp.task('wiredep', function (){
+	return gulp.src('index.html', {
+		cwd: './app'
+	})
+	.pipe(wiredep({
+		directory: './app/vendor',
+		read: false,
+		onError: function (err){
+			console.log(err.code);
+		}
 	}))
 	.pipe(gulp.dest('./app'));
 });
@@ -60,6 +76,7 @@ gulp.task('minify-css', function() {
 // Comprime los archivos javascript
 gulp.task('scripts', function() {
 	gulp.src(paths.scripts)
+	.pipe(concat('build.js'))
 	.pipe(uglify().on('error', gutil.log))
 	.pipe(gulp.dest('./app/js'))
 });
@@ -84,14 +101,5 @@ gulp.task('watch', function() {
 	gulp.watch(['./bower.json'], ['wiredep']);
 });
 
-// Injectamos dependencias instaladas con bower
-gulp.task('wiredep', function (){
-	gulp.src('./app/index.html')
-	.pipe(wiredep({
-		directory: './app/vendor'
-	}))
-	.pipe(gulp.dest('./app'));
-});
-
 // Corre todas las tareas
-gulp.task('default', ['watch', 'scripts', 'minify-css', 'server', 'inject', 'wiredep']);
+gulp.task('default', ['server', 'scripts', 'minify-css', 'server', 'inject', 'watch']);
