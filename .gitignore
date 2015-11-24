@@ -2,3 +2,4 @@ node_modules/*
 phpMyAdmin/*
 app/vendor/*
 app/js/*
+app/css/*
