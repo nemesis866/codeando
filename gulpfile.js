@@ -18,7 +18,10 @@ var gulp = require('gulp'),
 	historyApiFallback = require('connect-history-api-fallback'),
 	// Inyector de dependencias
 	inject = require('gulp-inject'),
-	wiredep = require('wiredep').stream;
+	wiredep = require('wiredep').stream,
+	// Manejamos errores en archivos javascript
+	jshint = require('gulp-jshint'),
+	stylish = require('jshint-stylish');
 
 // Paths para los archivos
 var paths = {
@@ -93,13 +96,22 @@ gulp.task('server', function (){
 	});
 });
 
+// Mostramos los errores javascript en consola
+gulp.task('lint', function (){
+	return gulp.src(paths.scripts)
+	.pipe(jshint('.jshintrc'))
+	.pipe(jshint.reporter('jshint-stylish'))
+	.pipe(jshint.reporter('fail'));
+});
+
 // Corre las tareas cada vez que hay cambios
 gulp.task('watch', function() {
 	gulp.watch([paths.html], ['html']);
-	gulp.watch([paths.scripts], ['scripts', 'inject']);
+	gulp.watch([paths.scripts], ['scripts', 'inject', 'lint']);
+	gulp.watch(['./gulpfile.js'], ['lint']);
 	gulp.watch([paths.css], ['inject', 'minify-css']);
 	gulp.watch(['./bower.json'], ['wiredep']);
 });
 
 // Corre todas las tareas
-gulp.task('default', ['server', 'scripts', 'minify-css', 'server', 'inject', 'watch']);
+gulp.task('default', ['server', 'scripts', 'minify-css', 'inject', 'watch']);
