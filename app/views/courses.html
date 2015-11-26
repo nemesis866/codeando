@@ -10,8 +10,29 @@
 	</div>
 </div>
 <div id="wrapper" class="center">
-	<div class="cursos" ng-repeat="course in vm.courses">
+	<div class="cursos" ng-repeat="course in vm.courses | orderBy:'titulo':false">
 		<h2>{{ course.titulo }}</h2>
-		<img src="/img_curso/{{ course.img }}" alt="{{ course.titulo }}">
+		<img src="/img_curso/{{ course.img }}" alt="{{ course.categoria }}">
+		<div class="buttons">
+			<div class="button-2" ng-class="vm.class.logout">
+				<p>
+					<a href="/curso/{{ course.url }}/ {{ course.id_curso }}">
+						Información
+					</a>
+				</p>
+			</div>
+			<div class="button" ng-class="vm.class.signup">
+				<p>
+					<a href="/curso/{{ course.url }}/ {{ course.id_curso }}">
+						Información
+					</a>
+				</p>
+			</div>
+			<div class="button" ng-class="vm.class.signup">
+				<p>
+					<a href="/platform/{{ course.id_curso }}">Ingresar al curso</a>
+				</p>
+			</div>
+		</div>
 	</div>
 </div>

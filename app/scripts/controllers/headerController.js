@@ -10,7 +10,7 @@ Web: http://www.pauloandrade1.com
 (function (){
 	'use strict';
 
-	function HeaderController($location)
+	function HeaderController($location, $scope, loginService)
 	{
 		var vm = this;
 
@@ -27,12 +27,34 @@ Web: http://www.pauloandrade1.com
 		{
 			return $location.path() === path;
 		};
+
+		// Observamos cambios en el login
+		vm.login = function ()
+		{
+			var bool = loginService.loggedIn();
+
+			vm.class = {
+				signup: { none: bool},
+				logout: { none: !bool}
+			};
+		};
+
+		// Cerramos sesion
+		vm.logout = function (){
+			loginService.logout();
+			vm.login();
+		};
+
+		// Ponemos en escucha
+		$scope.$watch(vm.login);
 	}
 
 	angular
 		.module('app')
 			.controller('headerController', [
 				'$location',
+				'$scope',
+				'loginService',
 				HeaderController
 			]);
 })();

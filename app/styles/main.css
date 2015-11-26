@@ -68,6 +68,11 @@ html
 	padding: 20px 10px;
 	position: relative;
 }
+.block
+{
+	display: block !important;
+	margin: 0 auto;
+}
 .cargando
 {
 	text-align: center;
@@ -80,18 +85,21 @@ html
 {
 	background-color: #F37A43;
 	color: #fff;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	padding: 10px 0;
-	text-align: center;
 	font-size: 1.1em;
 	font-weight: bold;
+	left: 0;
+	padding: 10px 0;
+	position: fixed;
+	right: 0;
+	text-align: center;
+	top: 0;
 	transform: translatey(-60px);
-	.margin-top: -60px;
-	transition-duration: .25s;
+	transition: all 0.25s ease;
 	z-index: 999;
+}
+.inlineBlock
+{
+	display: inline-block !important;
 }
 .left
 {
@@ -99,7 +107,7 @@ html
 }
 .none
 {
-	display: none;
+	display: none !important;
 }
 .success
 {
@@ -136,7 +144,7 @@ header
 	font-size: 0;
 	max-width: 1100px;
 	margin: 0 auto;
-	padding: 20px 0;
+	padding: 20px 10px;
 }
 header nav
 {
@@ -269,7 +277,8 @@ Configuracion pagina inicio
 	display: inline-block;
 	font-size: 16px;
 	vertical-align: middle;
-	width: 50%;
+	width: 48%;
+	padding-left: 2%;
 }
 #presentacion #box #box-1 h2
 {
@@ -384,15 +393,69 @@ Configuracion pagina cursos
 }
 .cursos
 {
+	border-radius: 5px;
 	font-size: 16px;
 	display: inline-block;
 	vertical-align: top;
 	width: 31%;
 	margin: 1%;
+	transition: all 0.25s ease;
+}
+.cursos:hover
+{
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+}
+.cursos img
+{
+	border-radius: 10px;
+	width: 98%;
 }
 .cursos h2
 {
 	font-size: 1em;
+	margin-bottom: 10px;
+}
+.cursos .buttons
+{
+	font-size: 0;
+}
+.cursos .buttons .button
+{
+	background-color: #0379BF;
+	border-radius: 5px;
+	color: #fcfcfc;
+	display: inline-block;
+	font-size: 16px;
+	margin: 1%;
+	padding: 10px 0;
+	vertical-align: top;
+	width: 48%;
+	transition: all 0.25s ease;
+}
+.cursos .buttons .button-2
+{
+	background-color: #0379BF;
+	border-radius: 5px;
+	color: #fcfcfc;
+	display: inline-block;
+	font-size: 16px;
+	margin: 1%;
+	padding: 10px 0;
+	vertical-align: top;
+	width: 98%;
+	transition: all 0.25s ease;
+}
+.cursos .buttons .button:hover,
+.cursos .buttons .button-2:hover
+{
+	background-color: #00488E;
+	cursor: pointer;
+}
+.cursos .buttons .button a,
+.cursos .buttons .button-2 a
+{
+	color: #fcfcfc;
+	transition: all 0.25s ease;
 }
 
 /*********************************************************
@@ -407,15 +470,11 @@ Configuracion pagina contacto
 }
 #form_contacto input[type="submit"]
 {
-	border: 1px solid #1B7FCC;
+	border: none;
 	border-radius: 3px;
-	box-shadow:
-        0 1px 2px 0 rgba(253,252,252,.35) inset,
-        0 -1px 2px 0 rgba(0,0,0,.15) inset;
 	padding: 10px 15px;
-	background-color: #1B7FCC;
+	background-color: #0379BF;
 	color: #fcfcfc;
-	text-decoration: none;
 	transition: all 0.25s ease;
 	margin-top: 10px;
 	font-size: 18px;
@@ -431,7 +490,8 @@ Configuracion pagina contacto
 #form_contacto input[type="text"]
 {
 	padding: 5px;
-	border: 1px solid #bbb;
+	border: 2px solid #ddd;
+	background-color: #ddd;
 	border-radius: 3px;
 	width: 60%;
 	transition: all 0.25s ease;
@@ -439,7 +499,18 @@ Configuracion pagina contacto
 }
 #form_contacto input[type="text"]:focus
 {
-	background-color: #eee;
+	background-color: #fcfcfc;
+}
+#form_contacto fieldset
+{
+	border: none;
+	background-color: #ddd;
+	padding: 5px 10px;
+	margin-bottom: 10px;
+}
+#form_contacto fieldset .middle
+{
+	vertical-align: top;
 }
 #form_contacto label
 {
@@ -447,6 +518,7 @@ Configuracion pagina contacto
 }
 #form_contacto option
 {
+	background-color: #fcfcfc;
 	padding: 5px 10px;
 	transition: all 0.25s ease;
 }
@@ -456,15 +528,15 @@ Configuracion pagina contacto
 }
 #form_contacto select
 {
-	border: 1px solid #bbb;
+	border: 2px solid #ddd;
+	background-color: #ddd;
 	border-radius: 3px;
 	width: 20%;
 	transition: all 0.25s ease;
 }
 #form_contacto textarea
 {
-	border-radius: 3px;
-	border: 1px solid #bbb;
+	border: 2px solid #ddd;
 	font-size: 16px;
 	height: 300px;
 	max-height: 400px;
@@ -475,11 +547,21 @@ Configuracion pagina contacto
 	text-align: left;
 	transition: all 0.25s ease;
 	width: 60%;
-
+	background-color: #ddd;
 }
 #form_contacto textarea:focus
 {
-	background-color: #eee;
+	background-color: #fcfcfc;
+}
+#form_contacto .top
+{
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+#form_contacto .bottom
+{
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
 /*********************************************************
@@ -584,12 +666,91 @@ Configuracion resaltador de sintaxis
 MEDIA QUERYS
 ****************************************************************/
 
-@media screen and (max-width: 480px){
-	
+@media (min-width: 300px) and (max-width: 480px){
+	footer .footer-box
+	{
+		width: 90%;
+	}
+	#home #home-content .content
+	{
+		width: 90%;
+	}
+	#home .home-box
+	{
+		width: 90%;
+	}
+	#presentacion #box #box-1
+	{
+		width: 98%;
+	}
+	#presentacion #box #box-1 h2
+	{
+		font-size: 20px;
+	}
+	#presentacion #box #box-2
+	{
+		width: 100%;
+		margin-top: 10px;
+	}
+	#presentacion #box #box-2 img
+	{
+		width: 150px;
+	}
+	#presentacion #box #box-2 #login
+	{
+		margin: 0 auto;
+	}
+	.cursos
+	{
+		width: 90% !important;
+	}
+	.cursos .buttons .button
+	{
+		width: 98%;
+	}
 }
-@media screen and (max-width: 750px){
-	
+@media (min-width: 481px) and (max-width: 750px){
+	footer .footer-box
+	{
+		width: 45%;
+	}
+	#home #home-content .content
+	{
+		width: 45%;
+	}
+	#presentacion #box #box-1
+	{
+		width: 98%;
+	}
+	#presentacion #box #box-1 h2
+	{
+		font-size: 30px;
+	}
+	#presentacion #box #box-2
+	{
+		width: 100%;
+		margin-top: 10px;
+	}
+	#presentacion #box #box-2 img
+	{
+		width: 200px;
+	}
+	#presentacion #box #box-2 #login
+	{
+		margin: 0 auto;
+	}
+	.cursos
+	{
+		width: 48%;
+	}
+	.cursos .buttons .button
+	{
+		width: 98%;
+	}
 }
-@media screen and (max-width: 950px){
-	
+@media (min-width: 751px) and (max-width: 950px){
+	.cursos
+	{
+		width: 48%;
+	}	
 }

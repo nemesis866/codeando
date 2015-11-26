@@ -5,16 +5,17 @@
 			<p>Ingresa a la plataforma es gratuita.</p>
 		</div>
 		<div id="box-2">
-			<div id="login">
+			<img src="/img/editor.png" alt="Cursos gratuitos" ng-class="vm.class.img">
+			<div id="login" ng-class="vm.class.form">
 				<div id="login-head">
 					<p>Empieza a aprender hoy</p>
 				</div>
 				<div id="login-body">
-					<form>
-						<p><input type="text" placeholder="UserName"></p>
-						<p><input type="password" placeholder="Password"></p>
+					<form name="form_contacto" novalidate>
+						<p><input type="text" ng-model="form1.userName" name="userName" placeholder="UserName" ng-required="vm.formConfig.required"></p>
+						<p><input type="password" ng-model="form1.password" name="password" placeholder="Password" ng-required="vm.formConfig.required"></p>
 						<hr>
-						<p><input type="submit" value="Ingresar"></p>
+						<p><input type="submit" ng-click="vm.getUser(form1)" value="Ingresar" ng-disabled="form_contacto.$invalid"></p>
 					</form>
 				</div>
 				<div id="login-footer">
