@@ -10,11 +10,10 @@ Web: http://www.pauloandrade1.com
 (function (){
 	'use strict';
 
-	function FooterController($http)
+	function FooterController(courseService)
 	{
 		var vm = this;
 		var fecha = new Date();
-		var url = 'http://api.dev/cursos/';
 
 		// Menu del sitio web
 		vm.menu = [
@@ -36,12 +35,13 @@ Web: http://www.pauloandrade1.com
 		vm.date = fecha.getFullYear();
 
 		// Obtenemos los cursos disponibles
-		$http.get(url).success(function (resource){
-			vm.courses = resource;
-		});
+		vm.courses = courseService.query();
 	}
 
 	angular
 		.module('app')
-			.controller('footerController', ['$http', FooterController]);
+			.controller('footerController', [
+				'courseService',
+				FooterController
+			]);
 })();

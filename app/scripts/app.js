@@ -9,5 +9,6 @@ Web: http://www.pauloandrade1.com
 
 angular
 	.module('app', [
+		'ngResource',
 		'ngRoute'
 	]);

@@ -1,5 +1,5 @@
 /************************************************
-Controlador para la ruta /cursos/
+Servicio para obtener los cursos de la plataforma
 
 Proyecto: Codeando.org
 Author: Paulo Andrade
@@ -10,17 +10,17 @@ Web: http://www.pauloandrade1.com
 (function (){
 	'use strict';
 
-	function CoursesController(courseService)
+	function CourseService ($resource)
 	{
-		var vm = this;
-		
-		vm.courses = courseService.query();
+		var url = 'http://api.dev/cursos/';
+
+		return $resource(url);
 	}
 
 	angular
 		.module('app')
-			.controller('coursesController', [
-				'courseService',
-				CoursesController
+			.service('courseService', [
+				'$resource',
+				CourseService
 			]);
 })();

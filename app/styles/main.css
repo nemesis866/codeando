@@ -167,6 +167,10 @@ header nav ul
 {
 	font-size: 0;
 }
+header nav .active
+{
+	color: #0379BF;
+}
 header #header
 {
 	display: inline-block;
@@ -283,6 +287,10 @@ Configuracion pagina inicio
 	vertical-align: middle;
 	width: 50%;
 }
+#presentacion #box #box-2 img
+{
+	width: 300px;
+}
 #presentacion #box #box-2 #login
 {
 	width: 90%;
@@ -364,6 +372,27 @@ Configuracion pagina inicio
 {
 	color: #999;
 	cursor: pointer;
+}
+
+/*********************************************************
+Configuracion pagina cursos
+*********************************************************/
+
+#cursos
+{
+	font-size: 0;
+}
+.cursos
+{
+	font-size: 16px;
+	display: inline-block;
+	vertical-align: top;
+	width: 31%;
+	margin: 1%;
+}
+.cursos h2
+{
+	font-size: 1em;
 }
 
 /*********************************************************

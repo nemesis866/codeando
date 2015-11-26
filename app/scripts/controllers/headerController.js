@@ -10,19 +10,29 @@ Web: http://www.pauloandrade1.com
 (function (){
 	'use strict';
 
-	function HeaderController()
+	function HeaderController($location)
 	{
 		var vm = this;
 
+		// Urls del menu de navegación
 		vm.nav = [
 			{ title: 'Inicio', href: '/' },
 			{ title: 'Cursos', href: '/cursos/' },
 			{ title: 'Blog', href: 'http://blog.codeando.org' },
 			{ title: 'Contacto', href: '/contacto/' }
 		];
+
+		// Seleccionamos en enlace con la ruta actual
+		vm.active = function (path)
+		{
+			return $location.path() === path;
+		};
 	}
 
 	angular
 		.module('app')
-			.controller('headerController', HeaderController);
+			.controller('headerController', [
+				'$location',
+				HeaderController
+			]);
 })();

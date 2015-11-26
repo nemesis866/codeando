@@ -1,1 +1,17 @@
-<h1>Cursos</h1>
+<div id="presentacion">
+	<div id="box">
+		<div id="box-1">
+			<h2>Codeando tiene los siguientes cursos para ti.</h2>
+			<p>Proximamente nuevos cursos.</p>
+		</div>
+		<div id="box-2">
+			<img src="/img/devices.png" alt="Cursos gratuitos">
+		</div>
+	</div>
+</div>
+<div id="wrapper" class="center">
+	<div class="cursos" ng-repeat="course in vm.courses">
+		<h2>{{ course.titulo }}</h2>
+		<img src="/img_curso/{{ course.img }}" alt="{{ course.titulo }}">
+	</div>
+</div>
