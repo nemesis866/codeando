@@ -12,7 +12,7 @@ Web: http://www.pauloandrade1.com
 $email = ''; // Email del Administrador (Contacto en caso de algun problema)
 $site_domain = $_SERVER['SERVER_NAME']; // Dominio del sitio web
 $site_name = ''; // Nombre del sitio web
-$localhost = ''; // Host virtual para pruebas
+$localhost = 'codeando.dev'; // Host virtual para pruebas
 $login_show = true;  // Muestra el formulario de login en el header 'true = si, false = no'
 $login_type = true;  // Tipo de login, false = normal, true = dinamico (javascript)
 $title_index = 'Cursos online gratuitos'; // Titulo de la pagina principal
@@ -30,7 +30,7 @@ if($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '127.0.0
 		'server'=>'localhost', // Servidor
 		'user'=>'root', // Ususario
 		'pass'=>'', // Password
-		'db'=>'', // Base de datos
+		'db'=>'codeando', // Base de datos
 		'email'=>$email // Email de contacto del admin
 		);
 } else {

@@ -567,7 +567,7 @@ Configuracion Pagina de Inicio
 #presentacion
 {
 	background-color: #222;
-	background: url(/img/background3.jpg) 50% 0 no-repeat fixed;
+	background: url(/img/background.jpg) 50% 0 no-repeat fixed;
 	min-height: 410px;
 	position: relative;
 	padding-top: 2.6em;
