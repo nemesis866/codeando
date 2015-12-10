@@ -10,7 +10,7 @@ Web: http://www.pauloandrade1.com
 (function (){
 	'use strict';
 
-	function FooterController(courseService)
+	function FooterController(coursesService)
 	{
 		var vm = this;
 		var fecha = new Date();
@@ -35,13 +35,13 @@ Web: http://www.pauloandrade1.com
 		vm.date = fecha.getFullYear();
 
 		// Obtenemos los cursos disponibles
-		vm.courses = courseService.query();
+		vm.courses = coursesService.query();
 	}
 
 	angular
 		.module('app')
 			.controller('footerController', [
-				'courseService',
+				'coursesService',
 				FooterController
 			]);
 })();

@@ -10,12 +10,15 @@ Web: http://www.pauloandrade1.com
 (function (){
 	'use strict';
 
-	function CoursesController($scope, courseService, loginService)
+	function CoursesController($scope, coursesService, loginService)
 	{
 		var vm = this;
+
+		// Cambiamos el titulo
+		document.title = 'Cursos disponibles | Codeando.org';
 		
 		// Obtenemos el listado de cursos
-		vm.courses = courseService.query();
+		vm.courses = coursesService.query();
 
 		// Observamos cambios en el login
 		vm.login = function ()
@@ -36,7 +39,7 @@ Web: http://www.pauloandrade1.com
 		.module('app')
 			.controller('coursesController', [
 				'$scope',
-				'courseService',
+				'coursesService',
 				'loginService',
 				CoursesController
 			]);

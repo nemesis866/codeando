@@ -1,0 +1,27 @@
+<div id="presentacion">
+	<div id="box">
+		<div id="box-1">
+			<h2>{{ vm.course.titulo }}</h2>
+			<p>{{ vm.course.subtitulo }}</p>
+		</div>
+		<div id="box-2" class="curso">
+			<img src="/img_curso/{{ vm.course.img }}" alt="{{ vm.categoria }}">
+		</div>
+	</div>
+</div>
+<div id="wrapper" class="center">
+	<div id="curso">
+		<div id="box-1">
+			<h3>Sobre el curso</h3>
+			<p>{{ vm.course.description }}</p>
+			<h3>Requisitos</h3>
+			<p>{{ vm.course.requeriment }}</p>
+			<h3>Capitulos y temas</h3>
+		</div>
+		<div id="box-2">
+			<h3>Introducción al curso</h3>
+			<h3>Sobre el autor</h3>
+			<p>{{ vm.autor.nombre }}</p>
+		</div>
+	</div>
+</div>

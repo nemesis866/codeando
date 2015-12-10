@@ -300,6 +300,11 @@ Configuracion pagina inicio
 {
 	width: 300px;
 }
+#presentacion #box .curso img
+{
+	height: 300px;
+	border-radius: 50%;
+}
 #presentacion #box #box-2 #login
 {
 	width: 90%;
@@ -382,6 +387,10 @@ Configuracion pagina inicio
 	color: #999;
 	cursor: pointer;
 }
+#presentacion #box #box-2 #login #login-footer p
+{
+	transition: all 0.75s ease;
+}
 
 /*********************************************************
 Configuracion pagina cursos
@@ -389,31 +398,41 @@ Configuracion pagina cursos
 
 #cursos
 {
-	font-size: 0;
+}
+#cursos h2
+{
+	font-size: 2em;
+	padding: 25px 0;
 }
 .cursos
 {
-	border-radius: 5px;
+	border-radius: 10px;
 	font-size: 16px;
 	display: inline-block;
 	vertical-align: top;
 	width: 31%;
 	margin: 1%;
+	box-shadow: 0px 0px 1px rgba(0,0,0,0.5);
 	transition: all 0.25s ease;
 }
 .cursos:hover
 {
-	box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.5);
 }
 .cursos img
 {
-	border-radius: 10px;
-	width: 98%;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	width: 100%;
 }
-.cursos h2
+.cursos h3
 {
 	font-size: 1em;
-	margin-bottom: 10px;
+	margin: 10px 0;
+}
+.cursos p
+{
+	font-size: 15px;
 }
 .cursos .buttons
 {
@@ -422,28 +441,39 @@ Configuracion pagina cursos
 .cursos .buttons .button
 {
 	background-color: #0379BF;
-	border-radius: 5px;
 	color: #fcfcfc;
 	display: inline-block;
 	font-size: 16px;
-	margin: 1%;
 	padding: 10px 0;
 	vertical-align: top;
-	width: 48%;
+	width: 49.75%;
 	transition: all 0.25s ease;
+	text-align: center;
+	margin-top: 10px;
+}
+.cursos .buttons .left
+{
+	border-bottom-left-radius: 10px;
+	margin-right: 0.25%;
+}
+.cursos .buttons .right
+{
+	border-bottom-right-radius: 10px;
+	margin-left: 0.25%;
 }
 .cursos .buttons .button-2
 {
 	background-color: #0379BF;
-	border-radius: 5px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 	color: #fcfcfc;
 	display: inline-block;
 	font-size: 16px;
-	margin: 1%;
 	padding: 10px 0;
 	vertical-align: top;
-	width: 98%;
+	width: 100%;
 	transition: all 0.25s ease;
+	margin-top: 10px;
 }
 .cursos .buttons .button:hover,
 .cursos .buttons .button-2:hover
@@ -456,6 +486,36 @@ Configuracion pagina cursos
 {
 	color: #fcfcfc;
 	transition: all 0.25s ease;
+}
+
+/*********************************************************
+Configuracion pagina cursos
+*********************************************************/
+
+#curso
+{
+	font-size: 0;
+	text-align: left;
+}
+#curso #box-1
+{
+	display: inline-block;
+	vertical-align: top;
+	width: 65%;
+	font-size: 18px;
+}
+#curso #box-1 h3,
+#curso #box-2 h3
+{
+	font-size: 1.2em;
+	margin: 15px 0;
+}
+#curso #box-2
+{
+	display: inline-block;
+	vertical-align: top;
+	width: 35%;
+	font-size: 18px;
 }
 
 /*********************************************************
@@ -696,6 +756,10 @@ MEDIA QUERYS
 	{
 		width: 150px;
 	}
+	#presentacion #box .curso img
+	{
+		height: 150px;
+	}
 	#presentacion #box #box-2 #login
 	{
 		margin: 0 auto;
@@ -734,6 +798,10 @@ MEDIA QUERYS
 	#presentacion #box #box-2 img
 	{
 		width: 200px;
+	}
+	#presentacion #box .curso img
+	{
+		height: 200px;
 	}
 	#presentacion #box #box-2 #login
 	{

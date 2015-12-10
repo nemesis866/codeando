@@ -12,6 +12,39 @@ Web: http://www.pauloandrade1.com
 
 	function FncService ()
 	{
+		// Funcion que verifica si una clase existe en un elemento html
+		this.thereClass = function (elem, cls)
+		{
+		    return elem.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+		};
+
+		//Función para agregar una clase, si no existe la clase enviada - agrega la clase.
+		this.addClass = function (elem, cls)
+		{
+		    if(!this.thereClass(elem, cls)){
+		        elem.className += ' '+cls;
+		    }
+		};
+
+		// Función para Eliminar una clase
+		this.removeClass = function (elem, cls)
+		{
+		    if(this.thereClass(elem, cls)){
+		        var exp = new RegExp('(\\s|^)'+cls);
+
+		        elem.className = elem.className.replace(exp, '');
+		    }
+		};
+
+		// Funcion que comprueba que un string contenga el formato de un email
+		this.checkEmail = function (email){
+			if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+				return true; // Si es un email
+			} else {
+				return false; // Si no es un email
+			}
+		};
+
 		// Muestra un error en pantalla
 		this.error = function (msg)
 		{
@@ -26,7 +59,7 @@ Web: http://www.pauloandrade1.com
 		};
 
 		// Verifica si un objeto esta vacio
-		this.isEmpty = function isEmpty(obj)
+		this.isEmpty = function (obj)
 		{
 		    // null and undefined are "empty"
 		    if(obj === null){

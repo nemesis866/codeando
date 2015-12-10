@@ -10,28 +10,32 @@
 	</div>
 </div>
 <div id="wrapper" class="center">
-	<div class="cursos" ng-repeat="course in vm.courses | orderBy:'titulo':false">
-		<h2>{{ course.titulo }}</h2>
-		<img src="/img_curso/{{ course.img }}" alt="{{ course.categoria }}">
-		<div class="buttons">
-			<div class="button-2" ng-class="vm.class.logout">
-				<p>
-					<a href="/curso/{{ course.url }}/ {{ course.id_curso }}">
-						Información
-					</a>
-				</p>
-			</div>
-			<div class="button" ng-class="vm.class.signup">
-				<p>
-					<a href="/curso/{{ course.url }}/ {{ course.id_curso }}">
-						Información
-					</a>
-				</p>
-			</div>
-			<div class="button" ng-class="vm.class.signup">
-				<p>
-					<a href="/platform/{{ course.id_curso }}">Ingresar al curso</a>
-				</p>
+	<div id="cursos">
+		<h2 ng-class="vm.class.logout">Para ingresar a un curso inicie sesion.</h2>
+		<div class="cursos" ng-repeat="course in vm.courses | orderBy:'titulo':false">
+			<img src="/img_curso/{{ course.img }}" alt="{{ course.categoria }}">
+			<h3>{{ course.titulo }}</h3>
+			<p>{{ course.subtitulo }}</p>
+			<div class="buttons">
+				<div class="button-2" ng-class="vm.class.logout">
+					<p>
+						<a href="/curso/{{ course.url }}/{{ course.id_curso }}/">
+							Información
+						</a>
+					</p>
+				</div>
+				<div class="button left" ng-class="vm.class.signup">
+					<p>
+						<a href="/curso/{{ course.url }}/{{ course.id_curso }}/">
+							Información
+						</a>
+					</p>
+				</div>
+				<div class="button right" ng-class="vm.class.signup">
+					<p>
+						<a href="/platform/{{ course.id_curso }}">Ingresar al curso</a>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>

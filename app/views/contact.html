@@ -10,18 +10,18 @@
 	</div>
 </div>
 <div id="wrapper">
-	<form id="form_contacto" action="">
+	<form id="form_contacto" novalidate>
 		<fieldset class="top">
 			<label>Nombre:</label>
-			<input type="text" placeholder="Ingrese su nombre">
+			<input type="text" ng-model="form.name" name="name" placeholder="Ingrese su nombre" ng-required="vm.formConfig.required">
 		</fieldset>
 		<fieldset>
 			<label>Email:</label>
-			<input type="text" placeholder="Ingrese su email">
+			<input type="text" ng-model="form.email" name="email" placeholder="Ingrese su email" ng-required="vm.formConfig.required">
 		</fieldset>
 		<fieldset>
 			<label>Asunto:</label>
-			<select>
+			<select ng-model="form.asunto" name="asunto" ng-required="vm.formConfig.required">
 				<option></option>
 				<option>Comentario</option>
 				<option>Sugerencia</option>
@@ -30,8 +30,8 @@
 		</fieldset>
 		<fieldset class="bottom">
 			<label class="middle">Su comentario:</label>
-			<textarea placeholder="Ingrese su comentario"></textarea>
+			<textarea placeholder="Ingrese su comentario" ng-model="form.comment" name="comment" ng-required="vm.formConfig.required"></textarea>
 		</fieldset>
-		<input type="submit" value="Enviar">
+		<input type="submit" value="Enviar" ng-click="vm.setContact(form)" ng-disabled="form_contacto.$invalid">
 	</form>
 </div>

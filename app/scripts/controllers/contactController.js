@@ -10,14 +10,29 @@ Web: http://www.pauloandrade1.com
 (function (){
 	'use strict';
 
-	function ContactController()
+	function ContactController(contactService)
 	{
 		var vm = this;
+
+		// Cambiamos el titulo
+		document.title = 'Contactanos | Codeando.org';
 		
-		vm.msg = 'Página de contacto';
+		// Configuración del formulario
+		vm.formConfig = {
+			required: true
+		};
+
+		// Procesando formulario
+		vm.setContact = function (model)
+		{
+			contactService.setContact(model);
+		};
 	}
 
 	angular
 		.module('app')
-			.controller('contactController', ['$http', ContactController]);
+			.controller('contactController', [
+				'contactService',
+				ContactController
+			]);
 })();

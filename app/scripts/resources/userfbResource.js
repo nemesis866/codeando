@@ -1,5 +1,6 @@
 /************************************************
-Servicio para obtener un curso de la plataforma
+Servicio para obtener los usuarios de la plataforma
+desde facebook
 
 Proyecto: Codeando.org
 Author: Paulo Andrade
@@ -10,17 +11,19 @@ Web: http://www.pauloandrade1.com
 (function (){
 	'use strict';
 
-	function CourseService ($resource)
+	function UserfbResource ($resource)
 	{
-		var url = 'http://api.dev/cursos/:idCurso/';
+		var url = 'http://api.dev/users-fb/';
 
-		return $resource(url);
+		return $resource(url, {}, {
+  			'save': { method:'POST', isArray:true }
+  		});
 	}
 
 	angular
 		.module('app')
-			.service('courseService', [
+			.service('userfbResource', [
 				'$resource',
-				CourseService
+				UserfbResource
 			]);
 })();

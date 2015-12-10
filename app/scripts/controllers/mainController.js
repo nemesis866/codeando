@@ -10,15 +10,20 @@ Web: http://www.pauloandrade1.com
 (function (){
 	'use strict';
 
-	function MainController($scope, fncService, loginService)
+	function MainController($scope, fbService, fncService, loginService)
 	{
 		var vm = this;
+
+		// Cambiamos el titulo
+		document.title = 'Cursos de Programación | Codeando.org';
 		
-		// Observamos cambios en el login
+		// Observamos cambios en el login por email
 		vm.login = function ()
 		{
+			// Obtenemos un valor booleano segun el status del login
 			var bool = loginService.loggedIn();
 
+			// Variables para mostrar/ocultar elementos segun el status
 			vm.class = {
 				form: { none: bool},
 				img: { none: !bool}
@@ -37,7 +42,18 @@ Web: http://www.pauloandrade1.com
 			loginService.getUser(model);
 		};
 
-		// Ponemos en escucha
+		// Login con facebook
+		vm.getUserFb = function ()
+		{
+			var bool = fbService.login();
+
+			if(bool){
+				vm.user = fbService.me();
+
+			}
+		};
+
+		// Ponemos en escucha 
 		$scope.$watch(vm.login);
 	}
 
@@ -45,6 +61,7 @@ Web: http://www.pauloandrade1.com
 		.module('app')
 			.controller('mainController', [
 				'$scope',
+				'fbService',
 				'fncService',
 				'loginService',
 				MainController

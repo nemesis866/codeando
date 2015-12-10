@@ -1,5 +1,5 @@
 /************************************************
-Servicio para obtener un curso de la plataforma
+Servicio para obtener datos sobre autor de curso
 
 Proyecto: Codeando.org
 Author: Paulo Andrade
@@ -10,17 +10,17 @@ Web: http://www.pauloandrade1.com
 (function (){
 	'use strict';
 
-	function CourseService ($resource)
+	function AutorService ($resource)
 	{
-		var url = 'http://api.dev/cursos/:idCurso/';
+		var url = 'http://api.dev/autor/:idAutor/';
 
 		return $resource(url);
 	}
 
 	angular
 		.module('app')
-			.service('courseService', [
+			.service('autorService', [
 				'$resource',
-				CourseService
+				AutorService
 			]);
 })();
