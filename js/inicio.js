@@ -410,6 +410,15 @@ var form_login = function()
 					}
 				}
 
+				// Ocultamos el boton de informacion
+				if(document.querySelectorAll('.boton_informacion')){
+					var boton = document.querySelectorAll('.boton_informacion');
+
+					for(var i = 0; i < boton.length; i++){
+						boton[i].style.display = 'none';
+					}
+				}
+
 				// Mostramos boton al admin
 				document.getElementById('button_admin').style.display = 'inline-block';
 
@@ -880,7 +889,7 @@ function resaltador()
     var skin = 'desert'; //Selección de skin o tema. Ver lista posible más abajo. Por defecto se usa el skin 'default'
     // ########### FIN ZONA EDITABLE ########################################################################################
 
-    getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=" + (skin ? skin : "default") + (lenguajeEspecifico ? "?lang=" + lenguajeEspecifico : ""));
+    getScript("/js/resaltador.js?skin=" + (skin ? skin : "default") + (lenguajeEspecifico ? "?lang=" + lenguajeEspecifico : ""));
     var code = document.querySelectorAll('.code');
     for(var i = 0; i < code.length; i++){
     	// Obtenemos el html de code en cuestion

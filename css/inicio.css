@@ -142,7 +142,7 @@ header
 #head_1 h1,
 #head_1 p
 {
-	font-size: 2em;
+	font-size: 1.5em;
 	line-height: 1;
 }
 #head_1 h2,
@@ -187,6 +187,7 @@ header
 	zoom: 1;
 	text-align: center;
 	vertical-align: top;
+	font-size: 0.8em;
 }
 
 /*********************************************************
@@ -564,6 +565,58 @@ Configuracion Pagina de Inicio
 	text-align: center;
 	margin-top: 15px;
 }
+#home
+{
+	text-align: center;
+}
+#home h2
+{
+	font-size: 2em;
+	padding: 25px 0;
+}
+#home #home-content
+{
+	font-size: 0;
+	text-align: center;
+}
+#home #home-content .content
+{
+	display: inline-block;
+	font-size: 16px;
+	vertical-align: top;
+	width: 30%;
+}
+#home #home-content .content h3
+{
+	margin-bottom: 10px;
+}
+#home #home-content .content img
+{
+	background-color: #58CEFF;
+	border-radius: 5px;
+	padding: 15px;
+	width: 100px;
+}
+#home #home-content .content div
+{
+	width: 80%;
+	padding-left: 10%;
+	text-align: justify;
+}
+#home .home-box
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 45%;
+}
+#home .home-box img
+{
+	width: 150px;
+	background-color: #58cefF;
+	padding: 20px;
+	border-radius: 5px;
+	margin-bottom: 15px;
+}
 #presentacion
 {
 	background-color: #222;
@@ -687,45 +740,94 @@ Configuracion pagina cursos
 }
 .cursos
 {
-	background-color: #fcfcfc;
-	border: 1px solid #ddd;
-	border-radius: 2px;
-	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+	border-radius: 10px;
+	font-size: 16px;
 	display: inline-block;
-	*display: inline;
-	zoom: 1;
-	padding: 10px 20px;
+	vertical-align: top;
+	width: 31%;
+	margin: 1%;
+	box-shadow: 0px 0px 1px rgba(0,0,0,0.5);
 	transition: all 0.25s ease;
-	min-height: 150px;
-	margin: 0 10px;
-	margin-top: 1em;
-	width: 40%;
-	text-align: center;
 }
-.cursos a
+.cursos:hover
 {
-	color: #fcfcfc;
-}
-.cursos a:hover
-{
-	color: #fcfcfc;
-}
-.cursos h2
-{
-	color: #222;
-	font-size: 1.2em;
-	margin-bottom: 1em;
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.5);
 }
 .cursos img
 {
-	max-width: 250px;
-	max-height: 150px;
-	border: 0;
-	border-radius: 3px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	width: 100%;
 }
-.cursos .boton
+.cursos h2
 {
-	color: #fff;
+	font-size: 1em;
+	margin: 10px 0;
+}
+.cursos p
+{
+	font-size: 15px;
+}
+.cursos .buttons
+{
+	font-size: 0;
+}
+.cursos .buttons .left
+{
+	border-bottom-left-radius: 10px;
+}
+.cursos .buttons .right
+{
+	border-bottom-right-radius: 10px;
+}
+.cursos .buttons .button-1
+{
+	background-color: #0379BF;
+	color: #fcfcfc;
+	display: inline-block;
+	font-size: 16px;
+	padding: 10px 0;
+	text-align: center;
+	transition: all 0.25s ease;
+	vertical-align: top;
+	width: 50%;
+}
+.cursos .buttons .button-2
+{
+	background-color: #0379BF;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	color: #fcfcfc;
+	font-size: 16px;
+	padding: 10px 0;
+	transition: all 0.25s ease;
+	vertical-align: top;
+	width: 100%;
+}
+.cursos .buttons .button-3
+{
+	background-color: #0379BF;
+	color: #fcfcfc;
+	font-size: 16px;
+	padding: 10px 0;
+	text-align: center;
+	transition: all 0.25s ease;
+	vertical-align: top;
+	width: 50%;
+}
+.cursos .buttons .button-1:hover,
+.cursos .buttons .button-2:hover,
+.cursos .buttons .button-3:hover
+{
+	background-color: #00488E;
+	cursor: pointer;
+}
+.cursos .buttons .button-1 a,
+.cursos .buttons .button-2 a,
+.cursos .buttons .button-3 a
+{
+	color: #fcfcfc;
+	transition: all 0.25s ease;
 }
 .boton_ingreso
 {
@@ -760,56 +862,47 @@ Configuracion pagina cursos
 .estadisticas
 {
 	color: #222;
-	font-size: 18px;
+	font-size: 0px;
 	margin-top: 10px;
 }
 .estadisticas div:first-child
 {
-	padding-right: 10px;
-	border-radius: 3px;
+	*display: inline;
+	background-color: #3498DB;
+	color: #fcfcfc;
+	display: inline-block;
+	font-size: 16px;
 	padding: 5px 0;
 	text-align: center;
-	color: #fcfcfc;
-	background-color: #3498DB;
-	border: 1px solid #1276b9;
-	border-bottom: 3px solid #1276b9;
-	width: 45%;
-	display: inline-block;
-	*display: inline;
-	zoom: 1px;
 	vertical-align: top;
+	width: 33%;
+	zoom: 1px;
 }
 .estadisticas div
 {
-
-	border-radius: 3px;
 	padding: 5px 0;
 	text-align: center;
 	color: #fcfcfc;
 	display: inline-block;
 	*display: inline;
+	font-size: 16px;
 	zoom: 1px;
 	vertical-align: top;
-	width: 45%;
+	width: 34%;
 	background-color: #34495E;
-	border: 1px solid #12273c;
-	border-bottom: 3px solid #12273c;
 }
-.videos
+.estadisticas div:last-child
 {
-	margin-top: 5px;
-	border-radius: 3px;
 	padding: 5px 0;
+	font-size: 16px;
 	text-align: center;
 	color: #fcfcfc;
 	display: inline-block;
 	*display: inline;
 	zoom: 1px;
 	vertical-align: top;
-	width: 91%;
+	width: 33%;
 	background-color: #1ABC9C;
-	border: 1px solid #089a7a;
-	border-bottom: 3px solid #089a7a;
 }
 
 /*********************************************************
@@ -1446,6 +1539,14 @@ MEDIA QUERYS
 	{
 		display: none;
 	}
+	#home #home-content .content
+	{
+		width: 90%;
+	}
+	#home .home-box
+	{
+		width: 90%;
+	}
 	#footer_1,
 	#footer_2,
 	#footer_3
@@ -1499,10 +1600,7 @@ MEDIA QUERYS
 	}
 	.cursos
 	{
-		width: 90%;
-		margin: 0;
-		padding: 10px 0;
-		margin-top: 1em;
+		width: 90% !important;
 	}
 	.cursos h2
 	{
@@ -1539,6 +1637,10 @@ MEDIA QUERYS
 	{
 		display: block;
 	}
+	#home #home-content .content
+	{
+		width: 45%;
+	}
 	#nav_wrapper
 	{
 		padding: 0;
@@ -1572,9 +1674,7 @@ MEDIA QUERYS
 	}
 	.cursos
 	{
-		width: 90%;
-		margin: 0;
-		margin-top: 1em;
+		width: 90% !important;
 	}
 	.navegador
 	{
@@ -1621,5 +1721,23 @@ MEDIA QUERYS
 	#head_2 #header_text
 	{
 		display: none;
+	}
+	.cursos
+	{
+		width: 45%;
+	}
+	.cursos .buttons .button-1,
+	.cursos .buttons .button-2,
+	.cursos .buttons .button-3
+	{
+		width: 100%;
+	}
+	.cursos .buttons .left
+	{
+		border-bottom-left-radius: 0px;
+	}
+	.cursos .buttons .right
+	{
+		border-bottom-left-radius: 10px;
 	}
 }

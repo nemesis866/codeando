@@ -32,6 +32,7 @@ class Page
 	private $_premium;
 	private $_return_url;
 	private $_site_name;
+	private $_scope;
 	private $_title;
 
 	public function __construct()
@@ -39,8 +40,16 @@ class Page
 		// Incluimos el archivo de  configuracion
 		include $_SERVER['DOCUMENT_ROOT'].'/config.php';
 
+		// Incluimos algunas variables de configuración
 		$this->_email = $email;
 		$this->_premium = $premium;
+
+		// Vemos si el proyecto esta en desarrollo o produccion
+		if($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '127.0.0.1' || $_SERVER['SERVER_NAME'] == $localhost){
+			$this->_scope = 'desarrollo';
+		} else {
+			$this->_scope = 'produccion';
+		}
 	}
 
 	/************************************************
@@ -381,6 +390,14 @@ class Page
 						?>
 						<li><a href="/contacto/">Contactanos</a></li>
 					</ul>
+					<h3>Sitios de interes:</h3>
+					<ul>
+						<li><a href="http://programacionazteca.mx">Programación Azteca</a></li>
+						<li><a href="http://youtube.com/channel/UCS5t7Ynr2sPoWgUfsYHrksA">Youtube</a></li>
+						<li><a href="http://github.com/programacionazteca">Github</a></li>
+					</ul>
+				</div>
+				<div id="footer_2">
 					<?php
 					// Obtenemos los cursos disponibles en la plataforma
 					$result = $db->mysqli_select("SELECT * FROM cursos WHERE public='YES' ORDER BY titulo");
@@ -405,14 +422,6 @@ class Page
 						?></ul><?php
 					}
 					?>
-				</div>
-				<div id="footer_2">
-					<h3>Sitios de interes:</h3>
-					<ul>
-						<li><a href="http://programacionazteca.mx">Programación Azteca</a></li>
-						<li><a href="http://youtube.com/channel/UCS5t7Ynr2sPoWgUfsYHrksA">Youtube</a></li>
-						<li><a href="http://github.com/programacionazteca">Github</a></li>
-					</ul>
 				</div>
 				<div id="footer_3">
 					<a href="http://programacionazteca.mx" rel="nofollow"><img src="/img/logo_azteca.png"></a>
@@ -469,24 +478,42 @@ class Page
 		<!--[if lt IE 9]>
 			<script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<script type="text/javascript" src="/js/min/fnc.js"></script>
-		<script type="text/javascript" src="/js/vendor/facebook.js"></script>
-		<script type="text/javascript" src="/js/min/files.js"></script>
-		<script type="text/javascript" src="/js/min/files_dis.js"></script>
 		<?php
-		if($page == 'platform'){
-			?><script type="text/javascript" src="/js/min/main.js"></script><?php
-		} else {
-			?><script type="text/javascript" src="/js/min/inicio.js"></script><?php
-		}
-		if(!empty($this->_appId)){ ?>
-		<?php } if(!empty($this->_analytics)){
-			// Si se ejecuta en local, se desactiva google analytics
-			if($_SERVER['SERVER_NAME'] != "127.0.0.1" || $_SERVER['SERVER_NAME'] != 'localhost' || $_SERVER['SERVER_NAME'] == 'codeando.dev'){
-				?><script src="/js/min/analytics.js"></script><?php
+		// Verificamos si estamos en producción
+		if($this->_scope == 'produccion'){
+			?>
+			<script type="text/javascript" src="/js/min/fnc.js"></script>
+			<script type="text/javascript" src="/js/vendor/facebook.js"></script>
+			<script type="text/javascript" src="/js/min/files.js"></script>
+			<script type="text/javascript" src="/js/min/files_dis.js"></script>
+			<?php
+			if($page == 'platform'){
+				?><script type="text/javascript" src="/js/min/main.js"></script><?php
+			} else {
+				?><script type="text/javascript" src="/js/min/inicio.js"></script><?php
 			}
-		} ?>
-		<script src="/js/min/social.js"></script>
+			if(!empty($this->_appId)){ ?>
+			<?php } if(!empty($this->_analytics)){
+				// Si se ejecuta en local, se desactiva google analytics
+				if($_SERVER['SERVER_NAME'] != "127.0.0.1" || $_SERVER['SERVER_NAME'] != 'localhost' || $_SERVER['SERVER_NAME'] == 'codeando.dev'){
+					?><script src="/js/min/analytics.js"></script><?php
+				}
+			} ?>
+			<script src="/js/min/social.js"></script>
+		<?php } else { ?>
+			<script type="text/javascript" src="/js/fnc.js"></script>
+			<script type="text/javascript" src="/js/vendor/facebook.js"></script>
+			<script type="text/javascript" src="/js/files.js"></script>
+			<script type="text/javascript" src="/js/files_dis.js"></script>
+			<?php
+			if($page == 'platform'){
+				?><script type="text/javascript" src="/js/main.js"></script><?php
+			} else {
+				?><script type="text/javascript" src="/js/inicio.js"></script><?php
+			}
+			?>
+			<script src="/js/social.js"></script>
+		<?php } ?>
 		<script>
 		window.___gcfg = {lang: 'es'};
 		

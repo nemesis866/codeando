@@ -12,8 +12,8 @@
 #</IfModule>
 
 # Mostrar sin www
-RewriteCond %{HTTP_HOST} ^www\.(.*)$
-RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$
+#RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 # ##############################################################################
 # # CROSS-ORIGIN RESOURCE SHARING (CORS)                                       #
@@ -568,6 +568,7 @@ FileETag None
 #SetEnv TZ America/Mexico_City
 
 ## REDIRECCIONES ##
+# ^(.*)$ /index.php?/$1 [L]
 
 RewriteRule ^contactanos/$ /contacto.php [L]
 RewriteRule ^cursos/$ /cursos.php [L]

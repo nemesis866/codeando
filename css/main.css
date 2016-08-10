@@ -202,14 +202,14 @@ Configuracion iconos
 	color: #000;
 	content: '\e612';
 	font-family: 'icomoon';
-	font-size: 24px;
+	font-size: 18px;
 }
 .icon-doc:before
 {
 	color: #000;
 	content: '\e604';
 	font-family: 'icomoon';
-	font-size: 24px;
+	font-size: 18px;
 }
 .icon-facebook:before
 {
@@ -242,7 +242,7 @@ Configuracion iconos
 	color: #000;
 	content: '\e60d';
 	font-family: 'icomoon';
-	font-size: 24px;
+	font-size: 18px;
 }
 .icon-platform:before
 {
@@ -259,7 +259,7 @@ Configuracion iconos
 	color: #000;
 	content: '\e613';
 	font-family: 'icomoon';
-	font-size: 24px;
+	font-size: 18px;
 }
 .icon-find:before
 {
@@ -482,6 +482,22 @@ Configuracion iconos
 .icon-cpp:before
 {
 	color: #F11717;
+	content: '\e62e';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-cc:before
+{
+	color: #F11717;
+	content: '\e62e';
+	font-family: 'icomoon';
+	font-size: 1em;
+	padding-right: 10px;
+}
+.icon-java:before
+{
+	color: #C6A615;
 	content: '\e62e';
 	font-family: 'icomoon';
 	font-size: 1em;

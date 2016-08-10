@@ -108,44 +108,18 @@ if($count > 0){
 		$id_curso = $row['id_curso'];
 		$img = $row['img'];
 		$titulo = $row['titulo'];
+		$subtitulo = $row['subtitulo'];
 
 		// Creamos la url del curso
 		$url = $fnc->Url($titulo);
 		?>
 
 		<div class='cursos'>
-			<h2><?php echo $titulo; ?></h2>
 			<img src="/img_curso/<?php echo $img; ?>" alt="<?php echo $titulo; ?>" title="<?php echo $titulo; ?>">
-			<div class="boton">
-				<a href="/curso/<?php echo strtolower($url); ?>/<?php echo $id_curso; ?>/" class="boton_ingreso">Información</a>
+			<h2><?php echo $titulo; ?></h2>
+			<p><?php echo $subtitulo; ?></p>
+
 			<?php
-			// Mostramos boton de ingreso solo si inicio sesion el usuario
-			if($_SESSION['logged_in']){
-				// Obtenemos informacion - si el usuario esta suscrito al curso
-				$result_temp = $db->mysqli_select("SELECT Count(id_suscripcion) FROM suscripcion WHERE id_curso='$id_curso' AND user='$user'");
-				$count = $result_temp->fetch_row();
-				$result_temp->close();
-
-				// Verificamos si esta suscrito al curso
-				if($count[0] > 0){
-					// Si esta suscrito mostramos boton de ingreso
-					?>
-						<button class="boton_ingreso" onclick="javascript:router('plataforma',<?php echo $id_curso; ?>)">Ingresar al curso</button>
-					</div>
-					<?php
-				} else {
-					// Si no esta suscrito mostramos boton para suscribir
-					?>
-						<button id="boton_suscribir_<?php echo $id_curso; ?>" class="boton_ingreso" onclick="javascript:suscribir(<?php echo $id_curso; ?>)">Suscribirse al curso</button>
-						<button id="boton_ingreso_<?php echo $id_curso; ?>" class="boton_ingreso boton_none" onclick="javascript:router('plataforma',<?php echo $id_curso; ?>)">Ingresar al curso</button>
-					</div>
-					<?php
-				}
-			} else {
-				?><button id="boton_ingreso_<?php echo $id_curso; ?>" class="boton_ingreso boton_none" onclick="javascript:router('plataforma',<?php echo $id_curso; ?>)">Ingresar al curso</button>
-				</div><?php
-			}
-
 			// Obtenemos el total de usuarios sucritos
 			$result2 = $db->mysqli_select("SELECT Count(id_suscripcion) FROM suscripcion WHERE id_curso='$id_curso'");
 			$count2 = $result2->fetch_row();
@@ -167,22 +141,69 @@ if($count > 0){
 					<span id="user_suscription<?php echo $id_curso; ?>"><?php echo $count2[0]; ?></span>
 				</div>
 				<div class="icon-discusion" title="<?php echo $count3[0]; ?> discusiones en el curso"><?php echo $count3[0]; ?></div>
+				<div class="icon-video" title="El curso cuenta con <?php echo $count4[0]; ?> videos">
+					<?php
+					// Mostramos el total de videos en el curso
+					echo $count4[0];
+					?>
+				</div>
 			</div>
-			<div class="videos icon-video" title="El curso cuenta con <?php echo $count4[0]; ?> videos">
-				<?php
-				// Mostramos el total de videos en el curso
-				echo $count4[0];
 
-				// Configuramos el texto segun si hay uno o mas videos
-				if($count4[0] == 1){
-					// Si hay uno
-					echo ' video';
+			<div class="buttons">
+				<?php
+				if($_SESSION['logged_in']){
+					// Mostramos boton si esta logueado
+					?>
+					<div class="button-1 left">
+						<a href="/curso/<?php echo strtolower($url); ?>/<?php echo $id_curso; ?>/">Información</a>
+					</div>
+					<?php
 				} else {
-					// Si hay 0 o mas de un video
-					echo ' videos';
+					// Mostramos boton si no esta logueado
+					?>
+					<div class="button-3 left boton_none">
+						<a href="/curso/<?php echo strtolower($url); ?>/<?php echo $id_curso; ?>/">Información</a>
+					</div>
+					<div class="button-2 boton_informacion">
+						<a href="/curso/<?php echo strtolower($url); ?>/<?php echo $id_curso; ?>/">Información</a>
+					</div>
+					<?php
 				}
+			
+			// Mostramos boton de ingreso solo si inicio sesion el usuario
+			if($_SESSION['logged_in']){
+				// Obtenemos informacion - si el usuario esta suscrito al curso
+				$result_temp = $db->mysqli_select("SELECT Count(id_suscripcion) FROM suscripcion WHERE id_curso='$id_curso' AND user='$user'");
+				$count = $result_temp->fetch_row();
+				$result_temp->close();
+
+				// Verificamos si esta suscrito al curso
+				if($count[0] > 0){
+					// Si esta suscrito mostramos boton de ingreso
+					?>
+						<div class="button-1 right">
+							<a onclick="javascript:router('plataforma',<?php echo $id_curso; ?>)">Ingresar al curso</a>
+						</div>
+					</div>
+					<?php
+				} else {
+					// Si no esta suscrito mostramos boton para suscribir
+					?>
+						<div class="button-1 right">
+							<a id="boton_suscribir_<?php echo $id_curso; ?>" onclick="javascript:suscribir(<?php echo $id_curso; ?>)">Suscribirse al curso</a>
+							<a id="boton_ingreso_<?php echo $id_curso; ?>" class="boton_none" onclick="javascript:router('plataforma',<?php echo $id_curso; ?>)">Ingresar al curso</a>
+						</div>
+					</div>
+					<?php
+				}
+			} else {
 				?>
-			</div>
+				<div id="boton_ingreso_<?php echo $id_curso; ?>" class="button-3 right boton_none">
+					<a onclick="javascript:router('plataforma',<?php echo $id_curso; ?>)">Ingresar al curso</a>
+				</div>
+				</div><?php
+			}
+			?>
 		</div>
 		<?php
 	}

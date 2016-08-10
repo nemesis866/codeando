@@ -63,49 +63,50 @@ $template->mostrar_redes();
 	?>
 </div>
 
-<div id="contenido">
-	<h2>CURSOS 100% GRATUITOS</h2>
-	<div class='contenido'>
-		<img data-tooltip="Cursos divididos por capitulos" src="https://lh4.googleusercontent.com/-59IzQ_9Jccg/VJJKWWr2juI/AAAAAAAAB8I/oxZ3dXQnAE8/w480-h270-no/Untitled1111.gif" alt="Cursos gratis">
+<div id="home">
+	<h2>Que encontraras en codeando</h2>
+
+	<div class="home-box">
+		<img src="/img/learn.png" alt="Aprender">
 	</div>
-	<div class="contenido texto">
-		<p>Te gusta la programación? en codeando.org ofrecemos cursos gratuitos con los que podras aprender a programar y/o a desarrollar tus propios proyectos, si ya cuentas con bases en la programación podras ampliar tus conociemientos, la plataforma se encuentra en fase beta, si presentas alguna falla técnica o visual por favor póngase en contacto con el <a href="/contacto/">equipo de codeando.org</a> para corregir el problema a la brevedad posible.</p>
+	<div class="home-box left">
+		<p>Cursos de programación en video con los que podras aprender a tu propio ritmo, a la hora que puedas y con una gran comunidad dispuesta a ayudarte a resolver tus dudas.</p>
+	</div>
+	<div class="home-box">
+		<img src="/img/forums.png" alt="Sistema de discusiones">
+	</div>
+	<div class="home-box left">
+		<p>Cada curso cuenta con un poderoso sistema de discusiones, para aclarar todas las dudas que te puedan surgir, además de un sistema de notas para respaldar tus aprendizajes.</p>
+	</div>
+	<div class="home-box">
+		<img src="/img/cloud.png" alt="Plataforma">
+	</div>
+	<div class="home-box left">
+		<p>Acceso directo y gratuito a la plataforma online de codeando donde encontraras infinidad de cursos y temas para aprender las nuevas tecnologias en el desarrollo web.</p>
 	</div>
 
-	<h2>EXCELENTE DOCUMENTACIÓN</h2>
-	<div class="contenido texto">
-		<p>Todos los temas de cada uno de los cursos cuenta con su propia documentación, con esto tratamos de que el aprendizaje sea lo más simple y explicito posible tanto para usuarios novatos como experimentados, además cada tema cuenta con los ejemplos (codigos) finales para que puedas comparar tu código con el explicado en el tema.</p>
-	</div>
-	<div class='contenido'>
-		<img src="https://lh6.googleusercontent.com/-7iE0lk3LL6E/VJJO_uV7i-I/AAAAAAAAB8g/t8mY4EaRJ9c/w480-h270-no/Untitled6.gif" alt="Documentación" data-tooltip="Documentacion personalizada por temas">
-	</div>
+	<h2>En codeando aprenderas</h2>
 
-	<h2>SISTEMA DE DISCUSIONES</h2>
-	<div class='contenido'>
-		<img src="https://lh4.googleusercontent.com/-e71trD0LQt0/VJJNebXQXFI/AAAAAAAAB8Y/vTzYR8XZaoQ/w480-h270-no/Untitled3.gif" alt="Sistema de discusiones" data-tooltip="Sistema de discusiones para resolver tus dudas">
-	</div>
-	<div class="contenido texto">
-		<p>Te quedaron dudas? no te preocupes, codeando.org cuenta con un potente sistema de discusiones en el que podrás publicar dudas, aportes, además cuentas con la opción de subir tus archivos a la plataforma ya sea para aportar o para recibir ayuda. Con este sistema los usuarios de la plataforma se podran ayudar entre si para mejorar su experiencia de aprendizaje, ayudanos a seguir mejorando.</p>
-	</div>
-
-	<h2>Codeando.org esta disponible para los navegadores</h2>
-	<div id="navegadores">
-		<p>IE 10+, Google Chrome, Mozilla Firefox, Opera y Safari.</p>
-		<div id="nave">
-			<div class="navegador">
-				<img src="https://lh6.googleusercontent.com/-1BAjJfiarBg/VCwYxAr4nlI/AAAAAAAABwo/gB_OoKIxAb0/s256-no/ie-logo.png" alt="IE" data-tooltip="Internet Explorer">
+	<div id="home-content">
+		<div class="content">
+			<h3>Leer y entender código</h3>
+			<img src="/img/editor.png" alt="Editor de código">
+			<div>
+				<p>El 80% del tiempo lo invertimos leyendo y entendiendo código, en codeando te enseñaremos a programar con buenas practicas para reducir esta estadistica.</p>
 			</div>
-			<div class="navegador">
-				<img src="https://lh4.googleusercontent.com/-RVewxLFMN2U/VCwYws2DkTI/AAAAAAAABwg/imqpq5g_fyE/w400-h300-no/chrome_logo.png" alt="Chrome" data-tooltip="Google Chrome">
+		</div>
+		<div class="content">
+			<h3>Crear páginas web</h3>
+			<img src="/img/web.png" alt="Crear páginas web">
+			<div>
+				<p>Aprenderas a construir tus propios sitios web con las nuevas tecnologías, buenas practicas y con las herramientas más utilizadas actualmente.</p>
 			</div>
-			<div class="navegador">
-				<img src="https://lh5.googleusercontent.com/-17qktDHFdNs/VCwYwjz9ExI/AAAAAAAABwk/49rlgdGQRGI/s256-no/Firefox_logo.png" alt="Firefox" data-tooltip="Mozilla Firefox">
-			</div>
-			<div class="navegador">
-				<img src="https://lh5.googleusercontent.com/-1PoAM9YVVbo/VCwYx21SY9I/AAAAAAAABww/SB7cbiQOgkc/s500-no/opera_Logo.png" alt="Opera" data-tooltip="Opera">
-			</div>
-			<div class="navegador">
-				<img src="https://lh5.googleusercontent.com/-htXtdAUQBF8/VCwYy4BcpMI/AAAAAAAABw4/YZJSU0UBvao/w265-h300-no/safari_logo.png" alt="Safari" data-tooltip="Safari">
+		</div>
+		<div class="content">
+			<h3>Crear APP</h3>
+			<img src="/img/movil.png" alt="Crear app moviles">
+			<div>
+				<p>Las app moviles son indispensables hoy en dia, en codeando aprenderas desde los conceptos basicos para crear app hasta la forma de distribuirlas.</p>
 			</div>
 		</div>
 	</div>

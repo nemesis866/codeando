@@ -15,8 +15,9 @@ class Template
 	public function mostrar_redes()
 	{
 		$social = new Social();
+		// id="social" al div principal
 		?>
-		<div id="social">
+		<div>
 			<div class="social">
 				<?php $social->button_gplus('standard'); ?>
 			</div>

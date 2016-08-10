@@ -8,6 +8,9 @@ Email: source.compu@gmail.com
 Web: http://www.pauloandrade1.com
 ************************************************/
 
+// Incluimos la conexion a la base de datos
+require_once 'Db.php';
+
 class Fnc
 {
 	public function date_display($fecha)
@@ -111,8 +114,8 @@ class Fnc
 	}
 	public function html_replace($content)
 	{
-		$codigo = array("[-","-]","&-","--|","-&","text/htm","--&gt;");
-		$replace = array("&lt;","&gt;","(","))",")","text/html","-->");
+		$codigo = array("[-","-]","&-","--|","-(&","-&","text/htm","--&gt;");
+		$replace = array("&lt;","&gt;","(","))","))",")","text/html","-->");
 		
 		for($i = 0; $i < count($codigo); $i++){
 			$content = str_replace($codigo[$i], $replace[$i], $content);
@@ -199,9 +202,12 @@ class Fnc
 	// Funcion para desinfectar peticiones sql
 	public function secure_sql($valor)
 	{
+		// Creamos un objeto mysqli
+		$db = new Db();
+
 		$valor = htmlspecialchars(stripslashes($valor));
         // $valor = str_ireplace("script", "blocked", $valor);
-        $valor = mysql_escape_string($valor);
+        $valor = $db->mysqli_secure($valor);
 
 		return $valor;
 	}
@@ -233,8 +239,8 @@ class Fnc
 		}
 
 		arsort($palabras);
-		$palabras = array_keys(array_slice($palabras,0,$cantidad-count($keywords)));
-		$keywords = array_merge($palabras,$keywords);
+		$palabras = array_keys(array_slice($palabras, 0, $cantidad-count($keywords)));
+		$keywords = array_merge($palabras, $keywords);
 
 		return implode(' ,',$keywords);
 	}

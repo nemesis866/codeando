@@ -160,20 +160,20 @@ $template->mostrar_redes();
 
 			if($count[0] > 0){
 				?>
-					<button class="boton_ingreso" onclick="javascript:router('plataforma',<?php echo $id_curso; ?>)">Ingresar al curso</button>
+					<button class="icon-platform button login_in large left" onclick="javascript:router('plataforma',<?php echo $id_curso; ?>)">Ingresar al curso</button>
 				</div>
 				<?php
 			} else {
 				?>
-					<button id="boton_suscribir_<?php echo $id_curso; ?>" class="boton_ingreso" onclick="javascript:suscribir(<?php echo $id_curso; ?>)">Suscribirse al curso</button>
-					<button id="boton_ingreso_<?php echo $id_curso; ?>" class="boton_ingreso boton_none" onclick="javascript:router('plataforma',<?php echo $id_curso; ?>)">Ingresar al curso</button>
+					<button id="boton_suscribir_<?php echo $id_curso; ?>" class="icon-platform button login_in large left" onclick="javascript:suscribir(<?php echo $id_curso; ?>)">Suscribirse al curso</button>
+					<button id="boton_ingreso_<?php echo $id_curso; ?>" class="icon-platform button login_in large left boton_none" onclick="javascript:router('plataforma',<?php echo $id_curso; ?>)">Ingresar al curso</button>
 				</div>
 				<?php
 			}
 		} else {
 				?><p>Para unirte al curso debes iniciar sesion</p>
-				<p><button id="login_button" class="icon-usuario button blue-fb large left">Inicio de sesion</button></p>
-				<p><button id="boton_ingreso_<?php echo $id_curso; ?>" class="boton_ingreso boton_none" onclick="javascript:router('plataforma',<?php echo $id_curso; ?>)">Ingresar al curso</button></p>
+				<p><button id="login_button" class="icon-usuario button login_button large left">Inicio de sesion</button></p>
+				<p><button id="boton_ingreso_<?php echo $id_curso; ?>" class="icon-platform button login_in large left boton_none" onclick="javascript:router('plataforma',<?php echo $id_curso; ?>)">Ingresar al curso</button></p>
 			</div><?php
 		}
 		?>

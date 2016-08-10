@@ -64,7 +64,7 @@ function files_dis(control,id)
 				document.getElementById('content_dis_edit_cargando').innerHTML = '<img src="/img/cargando1.gif">';
 
 				// Verificamos que sea una extension valida
-				if(ext == 'html' || ext == 'js' || ext == 'css' || ext == 'php' || ext == 'json' || ext == 'c' || ext == 'cpp' || ext == 'h'){
+				if(ext == 'html' || ext == 'js' || ext == 'css' || ext == 'php' || ext == 'json' || ext == 'c' || ext == 'cpp' || ext == 'h' || ext == 'cc' || ext == 'java' || ext == 'ino'){
 					// Obtenemos el contenido del archivo
 					var archivo = e.dataTransfer.files[i];
 					var lector = new FileReader();

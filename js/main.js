@@ -7,7 +7,7 @@ Email: source.compu@gmail.com
 Web: http://www.pauloandrade1.com
 ************************************************/
 
-// Variables globales
+// Variables globales -(&
 var codigo = Array("<", ">","){","(","))",")","\n", "[b]", "[/b]", "[I]", "[/I]",
 	"[u]", "[/u]","[t]","[/t]","'","javascript:","array:","text/html");
 var replace = Array("[-","-]",") {","&-","--|","-&","<br>","<b>","</b>","<i>","</i>",
@@ -2641,7 +2641,7 @@ function resaltador()
     var skin = 'desert'; //Selección de skin o tema. Ver lista posible más abajo. Por defecto se usa el skin 'default'
     // ########### FIN ZONA EDITABLE ########################################################################################
 
-    getScript("https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=" + (skin ? skin : "default") + (lenguajeEspecifico ? "?lang=" + lenguajeEspecifico : ""));
+    getScript("/js/resaltador.js?skin=" + (skin ? skin : "default") + (lenguajeEspecifico ? "?lang=" + lenguajeEspecifico : ""));
     var code = document.querySelectorAll('.code');
     for(var i = 0; i < code.length; i++){
     	// Obtenemos el html de code en cuestion

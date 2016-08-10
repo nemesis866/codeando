@@ -284,7 +284,7 @@ function curso_cargar($fnc,$db)
 			<textarea id='content_dis' placeholder='Tienes alguna duda o aporte? publicalo aqui' onclick='javascript:mostrar_discucion()'></textarea>
 			<input type='text' id='link' placeholder='http://'>
 		</form>
-		<div id='content_dis_files'>Arrastre aqui sus archivos<br>(Tamaño maximo 5 Kb.)</div>
+		<div id='content_dis_files'>Arrastre aqui sus archivos<br>(Tamaño maximo 10 Kb.)</div>
 		<div id='content_dis_results'></div>
 		<div id='content_dis_cargando'></div>
 		<p>
