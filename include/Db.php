@@ -89,4 +89,23 @@ class Db
 	    
 	    return $datarow[$field];
 	}
+	// Funcion para escapar una cadena para almacenar en base de datos
+	public function mysqli_secure($string)
+	{
+		// Creamos un nuevo objeto mysqli
+		$mysqli = new mysqli($this->_server,$this->_user,$this->_pass,$this->_db);
+		// Probamos la conexion
+		if($mysqli->connect_errno){
+			// Si nos da error al conectar mostramos mensaje
+			die('Error al conectar a la base de datos: '.$mysqli->connect_errno);
+		}
+		
+		// Escapamos la cadena
+		$string = $mysqli->real_escape_string($string);
+		// Cerramos la conexion a la base de datos
+		$mysqli->close();
+		// Retornamos la cadena
+		return $string;
+	}
+
 }

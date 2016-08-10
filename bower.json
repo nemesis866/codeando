@@ -22,9 +22,9 @@
   ],
   "dependencies": {
     "jquery": "~2.1.4",
-    "angular-facebook": "~0.2.3",
     "angular": "^1.5.8",
     "angular-route": "^1.5.8",
-    "angular-resource": "^1.5.8"
+    "angular-resource": "^1.5.8",
+    "angular-facebook": "^0.2.3"
   }
 }
