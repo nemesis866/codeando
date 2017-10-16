@@ -5,11 +5,10 @@ Archivo de configuracion general
 Proyecto: Codeando.org
 Author: Paulo Andrade
 Email: source.compug@mail.com
-Web: http://www.pauloandrade1.com
 ************************************************/
 
 ########## Opciones generales ################
-$email = 'source.compu@gmail.com'; // Email del Administrador (Contacto en caso de algun problema)
+$email = 'admin@codeando.org'; // Email del Administrador (Contacto en caso de algun problema)
 $site_domain = $_SERVER['SERVER_NAME']; // Dominio del sitio web
 $site_name = 'Codeando'; // Nombre del sitio web
 $localhost = 'codeando.dev'; // Host virtual para pruebas
@@ -28,8 +27,8 @@ if($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '127.0.0
 	// En local
 	$data_db = array(
 		'server'=>'127.0.0.1:3306', // Servidor
-		'user'=>'paulo', // Ususario
-		'pass'=>'paulo866', // Password
+		'user'=>'root', // Ususario
+		'pass'=>'root', // Password
 		'db'=>'codeando', // Base de datos
 		'email'=>$email // Email de contacto del admin
 		);
@@ -37,9 +36,9 @@ if($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '127.0.0
 	// En servidor
 	$data_db = array(
 		'server'=>'localhost', // Servidor
-		'user'=>'progra11_paulo86', // Usuario
-		'pass'=>'@,!CExNOF-dh', // Password
-		'db'=>'progra11_codeando', // Base de datos
+		'user'=>'root', // Usuario
+		'pass'=>'VLLjgpq3vsLT', // Password
+		'db'=>'codeando', // Base de datos
 		'email'=>$email // Email de contacto del admin
 		);
 }

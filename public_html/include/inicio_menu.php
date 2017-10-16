@@ -5,7 +5,6 @@ Archivo que contiene el menu para inicio
 Proyecto: Codeando.org
 Author: Paulo Andrade
 Email: source.compu@gmail.com
-Web: http://www.pauloandrade1.com
 ************************************************/
 
 // Seguridad
@@ -20,40 +19,43 @@ if(empty($_SESSION['nivel'])){
 include $_SERVER['DOCUMENT_ROOT'].'/config.php';
 ?>
 
-<div id="nav">
-	<div id="nav_wrapper">
-		<div id="nav_1">
-			<div id="buscador" class="icon-find">
-				<input type="text" id="q" placeholder="Buscar en codeando.org">
-			</div>
-		</div>
-		<div id="nav_2">
-			<nav>
-				<ul>
-					<li id="nav1"><a href="/">Inicio</a></li>
-					<li id="nav2"><a href="/cursos/">Cursos</a></li>
-					<li><a href="http://blog.codeando.org">Blog</a></li>
-					<?php
-					// Verificamos que el contenido premium este activado
-					if($premium){
-						?>
-						<li id="nav3"><a href="/premium/">Contenido exclusivo</a></li>
-						<?php
-					}
-					?>
-					<li id="nav4"><a href="/contacto/">Contactanos</a></li>
-					<?php
-					// Mostramos url al admin
-					if($_SESSION['logged_in']){
-						?>
-						<li><a href="/admin-co/">Admin</a></li>
-						<?php
-					}
-					?>
-					<li id="button_admin" class="none"><a href="/admin-co/">Admin</a></li>
-				</ul>
-			</nav>
-		</div>
+<header>
+	<div id="header">
+		<?php
+		// Verificamos si estamos mostrando un tema
+		if(empty($id_tema)){
+			// Si no mostramos tema
+			?>
+			<h1><a href="/">CODEANDO</a></h1>
+			<?php
+		} else {
+			// Si mostramos un tema
+			?>
+			<p><a href="/">CODEANDO</a></p>
+			<?php
+		}
+		?>
 	</div>
-</div>
-<span id="display-menu" class="icon-menu-inicio"></span>
+	<nav>
+		<ul>
+			<li id="nav1"><a href="/">Inicio</a></li>
+			<li id="nav2"><a href="/cursos/">Cursos</a></li>
+			<li><a href="http://blog.codeando.org">Blog</a></li>
+			<li id="nav4"><a href="/contacto/">Contactanos</a></li>
+			<?php
+			// Verificamos si esta logueado
+			if($_SESSION['logged_in']){
+				// Mostramos url al admin y logout
+				?>
+				<li><a href="/admin-co/">Admin</a></li>
+				<li><a href="#">Sign Out</a></li>
+				<?php
+			} else {
+				?>
+				<li><a href="#">Sign in</a></li>
+				<?php
+			}
+			?>
+		</ul>
+	</nav>
+</header>

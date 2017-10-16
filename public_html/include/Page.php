@@ -225,14 +225,19 @@ class Page
 	public function display_nav()
 	{
 		?>
-		<nav>
-			<ul>
-				<li><a href="/">Inicio</a></li>
-				<li><a href="/quienes_somos/">Quienes somos?</a></li>
-				<li><a href="/servicios/">Servicios</a></li>
-				<li><a href="/contactanos/">Contactanos</a></li>
-			</ul>
-		</nav>
+		<header>
+			<div id="header">
+				<h1><a href="/">CODEANDO</a></h1>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="/">Inicio</a></li>
+					<li><a href="/quienes_somos/">Quienes somos?</a></li>
+					<li><a href="/servicios/">Servicios</a></li>
+					<li><a href="/contactanos/">Contactanos</a></li>
+				</ul>
+			</nav>
+		</header>
 		<?php
 	}
 	// Mostramos la cabecera de la plataforma
