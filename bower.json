@@ -1,0 +1,25 @@
+{
+  "name": "plataforma-codeando",
+  "homepage": "https://github.com/pauloandradecode/codeando",
+  "authors": [
+    "Paulo andrade <source.compu@gmail.com>"
+  ],
+  "description": "plataforma de cursos gratuitos",
+  "main": "gulpfile.js",
+  "keywords": [
+    "plataforma",
+    "php",
+    "codeando",
+    "cursos",
+    "gratis"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public_html/vendor",
+    "test",
+    "tests"
+  ]
+}
