@@ -101,6 +101,10 @@ html
 {
 	display: inline-block !important;
 }
+.justify
+{
+	text-align: justify;
+}
 .left
 {
 	text-align: left;
@@ -245,7 +249,7 @@ Configuracion pagina inicio
 {
 	width: 80%;
 	padding-left: 10%;
-	text-align: left;
+	text-align: justify;
 }
 #home .home-box
 {
@@ -728,6 +732,15 @@ MEDIA QUERYS
 ****************************************************************/
 
 @media (min-width: 300px) and (max-width: 480px){
+	header nav
+	{
+		width: 100%;
+		text-align: center;
+	}
+	header #header
+	{
+		width: 100%;
+	}
 	footer .footer-box
 	{
 		width: 90%;

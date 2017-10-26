@@ -570,10 +570,10 @@ FileETag None
 ## REDIRECCIONES ##
 # ^(.*)$ /index.php?/$1 [L]
 
-RewriteRule ^contactanos/$ /contacto.php [L]
-RewriteRule ^cursos/$ /cursos.php [L]
+RewriteRule ^contactanos/$ /contacto.php?head=contactanos [L]
+RewriteRule ^cursos/$ /cursos.php?head=cursos [L]
 RewriteRule ^plataforma/(.*)$ /platform.php?page=platform&titulo=$1 [L]
-RewriteRule ^contacto/$ /contacto.php [L]
+RewriteRule ^contacto/$ /contacto.php?head=contacto [L]
 RewriteRule ^buscador/$ /buscador.php [L]
 RewriteRule ^admin-co/$ /admin.php [L]
 RewriteRule ^login/$ /login.php [L]

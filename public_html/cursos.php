@@ -5,7 +5,6 @@ Archivo en el que mostramos los cursos de la plataforma
 Proyecto: Codeando.org
 Author: Paulo Andrade
 Email: source.compu@gmail.com
-Web: http://www.pauloandrade1.com
 ************************************************/
 
 session_start();
